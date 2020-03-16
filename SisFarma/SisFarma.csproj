@@ -60,27 +60,25 @@
   <ItemGroup>
     <Compile Include="controller\controllers\ClienteController.cs" />
     <Compile Include="controller\controllers\ProdutoController.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="view\ClienteView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\ClienteView.Designer.cs">
       <DependentUpon>ClienteView.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="model\classes\Cliente.cs" />
     <Compile Include="model\classes\ItemPedido.cs" />
     <Compile Include="model\classes\Pedido.cs" />
     <Compile Include="model\classes\Produto.cs" />
     <Compile Include="model\classes\Usuario.cs" />
-    <Compile Include="controller\resources\JSONParser.cs" />
-    <Compile Include="controller\resources\JSONWriter.cs" />
-    <Compile Include="model\resouceBD\ConfigFireBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\ProdutoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="view\ClienteView.resx">
       <DependentUpon>ClienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\ProdutoView.resx">
       <DependentUpon>ProdutoView.cs</DependentUpon>

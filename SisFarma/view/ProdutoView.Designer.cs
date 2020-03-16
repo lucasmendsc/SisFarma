@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.adicionarProdutoButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.descricaoTextBox = new System.Windows.Forms.TextBox();
             this.precoLabel = new System.Windows.Forms.Label();
             this.descricaoLabel = new System.Windows.Forms.Label();
+            this.precoTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // adicionarProdutoButton
@@ -45,19 +45,12 @@
             this.adicionarProdutoButton.UseVisualStyleBackColor = true;
             this.adicionarProdutoButton.Click += new System.EventHandler(this.adicionarProdutoButton_Click);
             // 
-            // textBox1
+            // descricaoTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(352, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(352, 178);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.descricaoTextBox.Location = new System.Drawing.Point(352, 108);
+            this.descricaoTextBox.Name = "descricaoTextBox";
+            this.descricaoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.descricaoTextBox.TabIndex = 1;
             // 
             // precoLabel
             // 
@@ -79,6 +72,13 @@
             this.descricaoLabel.Text = "Descrição : ";
             this.descricaoLabel.Click += new System.EventHandler(this.label2_Click);
             // 
+            // precoTextBox
+            // 
+            this.precoTextBox.Location = new System.Drawing.Point(352, 178);
+            this.precoTextBox.Name = "precoTextBox";
+            this.precoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.precoTextBox.TabIndex = 2;
+            // 
             // ProdutoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,8 +86,8 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.descricaoLabel);
             this.Controls.Add(this.precoLabel);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.precoTextBox);
+            this.Controls.Add(this.descricaoTextBox);
             this.Controls.Add(this.adicionarProdutoButton);
             this.Name = "ProdutoView";
             this.Text = "ProdutoView";
@@ -99,9 +99,9 @@
         #endregion
 
         private System.Windows.Forms.Button adicionarProdutoButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox descricaoTextBox;
         private System.Windows.Forms.Label precoLabel;
         private System.Windows.Forms.Label descricaoLabel;
+        private System.Windows.Forms.TextBox precoTextBox;
     }
 }

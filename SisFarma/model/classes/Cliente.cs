@@ -12,13 +12,35 @@ namespace SisFarma.model.classes
         private String nome;
         private String cpf;
         private String rg;
-        private DateTime data_nasc;
+        private DateTime dataNasc;
         private String sexo;
         private String telefone;
         private String cep;
         private String cidade;
         private String logradouro;
         private int numero;
+
+        public Cliente()
+        {
+
+        }
+
+        public Cliente(int id,string nome,string cpf,string rg,
+            DateTime dataNasc,string sexo,string telefone,string cep,
+            string cidade,string logradouro,int numero)  
+        {
+            this.id = id;
+            this.nome = nome;
+            this.cpf = cpf;
+            this.rg = rg;
+            this.dataNasc = dataNasc;
+            this.sexo = sexo;
+            this.telefone = telefone;
+            this.cep = cep;
+            this.cidade = cidade;
+            this.logradouro = logradouro;
+            this.numero = numero;
+        }
 
         public int Id
         {
@@ -38,10 +60,10 @@ namespace SisFarma.model.classes
             set { cpf = value; }
         }
 
-        public DateTime Data_Nasc
+        public DateTime DataNasc
         {
-            get { return data_nasc; }
-            set { data_nasc = value; }
+            get { return dataNasc; }
+            set { dataNasc = value; }
         }
 
         public String Logradouro

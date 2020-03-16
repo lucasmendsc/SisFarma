@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SisFarma.controller.controllers;
+using SisFarma.model.classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,7 @@ namespace SisFarma.view
 {
     public partial class ProdutoView : Form
     {
+        ProdutoController pController = new ProdutoController();
         public ProdutoView()
         {
             InitializeComponent();
@@ -29,7 +32,19 @@ namespace SisFarma.view
 
         private void adicionarProdutoButton_Click(object sender, EventArgs e)
         {
-            \
+            try
+            {
+                Produto produtoAdicionado = new Produto(1, descricaoTextBox.Text, 2.5, "");
+                pController.adicionarProduto(produtoAdicionado);
+
+                MessageBox.Show("Produto cadastrado com sucesso!");
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Ocorreu um erro ao cadastar o produto " + exc.Message);
+            }
         }
+
     }
 }
