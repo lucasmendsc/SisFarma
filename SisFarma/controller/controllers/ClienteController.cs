@@ -7,33 +7,66 @@ using SisFarma.model.classes;
 using FireSharp.Config;
 using FireSharp.Response;
 using FireSharp.Interfaces;
+using SisFarma.model.DAO;
 
 namespace SisFarma.controller.controllers
 {
     class ClienteController
     {
-        IFirebaseClient clientFireBase;
-        IFirebaseConfig config;
+        ClienteDAO clienteDAO;
 
         public ClienteController()
         {
-            config = new FirebaseConfig();
-            config.AuthSecret = "8q9WyVQfuvRecPJUNbYnl28QwNTosqxw1axFdWhu";
-            config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/Clientes/";
-            clientFireBase = new FireSharp.FirebaseClient(config);
+            clienteDAO = new ClienteDAO();
         }
             public async void adicionarCliente(Cliente cliente)
         {
             try
             {
-                SetResponse response = await clientFireBase.SetTaskAsync("C"+cliente.Id, cliente);
-                Cliente result = response.ResultAs<Cliente>();
+                clienteDAO.adicionarCliente(cliente);
 
             }
             catch (Exception exc)
             {
                 Console.WriteLine("Ocorreu um erro ao inserir um cliente" + "\n"
                     + exc.Message);
+            }
+        }
+
+        public Cliente recuperarCliente(int id)
+        {
+            try
+            {
+                return clienteDAO.recuperarCliente(id);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine( exc.Message);
+            }
+            return null;
+        }
+
+        public void alterarCliente(Cliente cliente)
+        {
+            try
+            {
+                clienteDAO.alterarCliente(cliente);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+            }
+        }
+
+        public void deletarCliente(Cliente cliente)
+        {
+            try
+            {
+                clienteDAO.deletarCliente(cliente);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
             }
         }
     }

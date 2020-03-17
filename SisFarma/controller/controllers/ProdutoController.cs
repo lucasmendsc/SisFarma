@@ -7,28 +7,24 @@ using SisFarma.model.classes;
 using FireSharp.Config;
 using FireSharp.Response;
 using FireSharp.Interfaces;
+using SisFarma.model.DAO;
 
 namespace SisFarma.controller.controllers
 {
     class ProdutoController
     {
-        IFirebaseClient clientFireBase;
-        IFirebaseConfig config;
+        ProdutoDAO produtoDAO;
 
         public ProdutoController()
         {
-            config = new FirebaseConfig();
-            config.AuthSecret = "8q9WyVQfuvRecPJUNbYnl28QwNTosqxw1axFdWhu";
-            config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/Produtos/";
-            clientFireBase = new FireSharp.FirebaseClient(config);
+            produtoDAO = new ProdutoDAO();
         }
 
         public async void adicionarProduto(Produto produto)
         {
             try
             {
-                SetResponse response = await clientFireBase.SetTaskAsync("P" + produto.Id, produto);
-                Produto result = response.ResultAs<Produto>();
+                produtoDAO.adicionarProduto(produto);
             }
             catch (Exception exc)
             {

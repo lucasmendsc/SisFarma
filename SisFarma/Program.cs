@@ -1,4 +1,5 @@
-﻿using SisFarma.view;
+﻿using SisFarma.model.DAO;
+using SisFarma.view;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,9 +16,10 @@ namespace UI
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+             Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainView());
+
         }
     }
 }

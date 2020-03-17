@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.adicionarClienteButton = new System.Windows.Forms.Button();
-            this.cepTextBox = new System.Windows.Forms.TextBox();
-            this.telefoneTextBox = new System.Windows.Forms.TextBox();
-            this.sexoTextBox = new System.Windows.Forms.TextBox();
             this.rgTextBox = new System.Windows.Forms.TextBox();
-            this.cpfTextBox = new System.Windows.Forms.TextBox();
-            this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.sexoTextBox = new System.Windows.Forms.TextBox();
+            this.telefoneTextBox = new System.Windows.Forms.TextBox();
+            this.cepTextBox = new System.Windows.Forms.TextBox();
             this.cidadeTextBox = new System.Windows.Forms.TextBox();
-            this.logTextBox = new System.Windows.Forms.TextBox();
+            this.logradouroTextBox = new System.Windows.Forms.TextBox();
+            this.nomeTextBox = new System.Windows.Forms.TextBox();
+            this.cpfTextBox = new System.Windows.Forms.TextBox();
             this.nomeLabelText = new System.Windows.Forms.Label();
             this.cpfLabelText = new System.Windows.Forms.Label();
             this.rgLabelText = new System.Windows.Forms.Label();
@@ -45,6 +45,9 @@
             this.cepLabelText = new System.Windows.Forms.Label();
             this.cidadeLabelText = new System.Windows.Forms.Label();
             this.logradouroLabelText = new System.Windows.Forms.Label();
+            this.recuperarClienteButton = new System.Windows.Forms.Button();
+            this.apagarClienteButton = new System.Windows.Forms.Button();
+            this.alterarClienteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // adicionarClienteButton
@@ -57,61 +60,61 @@
             this.adicionarClienteButton.UseVisualStyleBackColor = true;
             this.adicionarClienteButton.Click += new System.EventHandler(this.adicionarClienteButton_Click);
             // 
-            // cepTextBox
+            // rgTextBox
             // 
-            this.cepTextBox.Location = new System.Drawing.Point(380, 231);
-            this.cepTextBox.Name = "cepTextBox";
-            this.cepTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cepTextBox.TabIndex = 1;
-            // 
-            // telefoneTextBox
-            // 
-            this.telefoneTextBox.Location = new System.Drawing.Point(380, 205);
-            this.telefoneTextBox.Name = "telefoneTextBox";
-            this.telefoneTextBox.Size = new System.Drawing.Size(100, 20);
-            this.telefoneTextBox.TabIndex = 2;
+            this.rgTextBox.Location = new System.Drawing.Point(386, 160);
+            this.rgTextBox.Name = "rgTextBox";
+            this.rgTextBox.Size = new System.Drawing.Size(100, 20);
+            this.rgTextBox.TabIndex = 1;
             // 
             // sexoTextBox
             // 
-            this.sexoTextBox.Location = new System.Drawing.Point(380, 179);
+            this.sexoTextBox.Location = new System.Drawing.Point(386, 186);
             this.sexoTextBox.Name = "sexoTextBox";
             this.sexoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.sexoTextBox.TabIndex = 3;
+            this.sexoTextBox.TabIndex = 2;
             // 
-            // rgTextBox
+            // telefoneTextBox
             // 
-            this.rgTextBox.Location = new System.Drawing.Point(380, 153);
-            this.rgTextBox.Name = "rgTextBox";
-            this.rgTextBox.Size = new System.Drawing.Size(100, 20);
-            this.rgTextBox.TabIndex = 4;
+            this.telefoneTextBox.Location = new System.Drawing.Point(386, 212);
+            this.telefoneTextBox.Name = "telefoneTextBox";
+            this.telefoneTextBox.Size = new System.Drawing.Size(100, 20);
+            this.telefoneTextBox.TabIndex = 3;
             // 
-            // cpfTextBox
+            // cepTextBox
             // 
-            this.cpfTextBox.Location = new System.Drawing.Point(380, 127);
-            this.cpfTextBox.Name = "cpfTextBox";
-            this.cpfTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cpfTextBox.TabIndex = 5;
-            // 
-            // nomeTextBox
-            // 
-            this.nomeTextBox.Location = new System.Drawing.Point(380, 101);
-            this.nomeTextBox.Name = "nomeTextBox";
-            this.nomeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nomeTextBox.TabIndex = 6;
+            this.cepTextBox.Location = new System.Drawing.Point(386, 238);
+            this.cepTextBox.Name = "cepTextBox";
+            this.cepTextBox.Size = new System.Drawing.Size(100, 20);
+            this.cepTextBox.TabIndex = 4;
             // 
             // cidadeTextBox
             // 
-            this.cidadeTextBox.Location = new System.Drawing.Point(380, 257);
+            this.cidadeTextBox.Location = new System.Drawing.Point(386, 264);
             this.cidadeTextBox.Name = "cidadeTextBox";
             this.cidadeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cidadeTextBox.TabIndex = 7;
+            this.cidadeTextBox.TabIndex = 5;
             // 
-            // logTextBox
+            // logradouroTextBox
             // 
-            this.logTextBox.Location = new System.Drawing.Point(380, 283);
-            this.logTextBox.Name = "logTextBox";
-            this.logTextBox.Size = new System.Drawing.Size(100, 20);
-            this.logTextBox.TabIndex = 8;
+            this.logradouroTextBox.Location = new System.Drawing.Point(386, 290);
+            this.logradouroTextBox.Name = "logradouroTextBox";
+            this.logradouroTextBox.Size = new System.Drawing.Size(100, 20);
+            this.logradouroTextBox.TabIndex = 6;
+            // 
+            // nomeTextBox
+            // 
+            this.nomeTextBox.Location = new System.Drawing.Point(386, 108);
+            this.nomeTextBox.Name = "nomeTextBox";
+            this.nomeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nomeTextBox.TabIndex = 7;
+            // 
+            // cpfTextBox
+            // 
+            this.cpfTextBox.Location = new System.Drawing.Point(386, 134);
+            this.cpfTextBox.Name = "cpfTextBox";
+            this.cpfTextBox.Size = new System.Drawing.Size(100, 20);
+            this.cpfTextBox.TabIndex = 8;
             // 
             // nomeLabelText
             // 
@@ -185,11 +188,44 @@
             this.logradouroLabelText.TabIndex = 16;
             this.logradouroLabelText.Text = "Logradouro : ";
             // 
+            // recuperarClienteButton
+            // 
+            this.recuperarClienteButton.Location = new System.Drawing.Point(457, 332);
+            this.recuperarClienteButton.Name = "recuperarClienteButton";
+            this.recuperarClienteButton.Size = new System.Drawing.Size(75, 23);
+            this.recuperarClienteButton.TabIndex = 17;
+            this.recuperarClienteButton.Text = "Recuperar";
+            this.recuperarClienteButton.UseVisualStyleBackColor = true;
+            this.recuperarClienteButton.Click += new System.EventHandler(this.recuperarClienteButton_Click);
+            // 
+            // apagarClienteButton
+            // 
+            this.apagarClienteButton.Location = new System.Drawing.Point(457, 377);
+            this.apagarClienteButton.Name = "apagarClienteButton";
+            this.apagarClienteButton.Size = new System.Drawing.Size(75, 23);
+            this.apagarClienteButton.TabIndex = 18;
+            this.apagarClienteButton.Text = "Apagar";
+            this.apagarClienteButton.UseVisualStyleBackColor = true;
+            this.apagarClienteButton.Click += new System.EventHandler(this.apagarClienteButton_Click);
+            // 
+            // alterarClienteButton
+            // 
+            this.alterarClienteButton.Location = new System.Drawing.Point(331, 377);
+            this.alterarClienteButton.Name = "alterarClienteButton";
+            this.alterarClienteButton.Size = new System.Drawing.Size(75, 23);
+            this.alterarClienteButton.TabIndex = 19;
+            this.alterarClienteButton.Text = "Alterar";
+            this.alterarClienteButton.UseVisualStyleBackColor = true;
+            this.alterarClienteButton.Click += new System.EventHandler(this.alterarClienteButton_Click);
+            // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.alterarClienteButton);
+            this.Controls.Add(this.apagarClienteButton);
+            this.Controls.Add(this.recuperarClienteButton);
             this.Controls.Add(this.logradouroLabelText);
             this.Controls.Add(this.cidadeLabelText);
             this.Controls.Add(this.cepLabelText);
@@ -198,14 +234,14 @@
             this.Controls.Add(this.rgLabelText);
             this.Controls.Add(this.cpfLabelText);
             this.Controls.Add(this.nomeLabelText);
-            this.Controls.Add(this.logTextBox);
-            this.Controls.Add(this.cidadeTextBox);
-            this.Controls.Add(this.nomeTextBox);
             this.Controls.Add(this.cpfTextBox);
-            this.Controls.Add(this.rgTextBox);
-            this.Controls.Add(this.sexoTextBox);
-            this.Controls.Add(this.telefoneTextBox);
+            this.Controls.Add(this.nomeTextBox);
+            this.Controls.Add(this.logradouroTextBox);
+            this.Controls.Add(this.cidadeTextBox);
             this.Controls.Add(this.cepTextBox);
+            this.Controls.Add(this.telefoneTextBox);
+            this.Controls.Add(this.sexoTextBox);
+            this.Controls.Add(this.rgTextBox);
             this.Controls.Add(this.adicionarClienteButton);
             this.Name = "ClienteView";
             this.Text = "ClienteView";
@@ -217,14 +253,14 @@
         #endregion
 
         private System.Windows.Forms.Button adicionarClienteButton;
-        private System.Windows.Forms.TextBox cepTextBox;
-        private System.Windows.Forms.TextBox telefoneTextBox;
-        private System.Windows.Forms.TextBox sexoTextBox;
         private System.Windows.Forms.TextBox rgTextBox;
-        private System.Windows.Forms.TextBox cpfTextBox;
-        private System.Windows.Forms.TextBox nomeTextBox;
+        private System.Windows.Forms.TextBox sexoTextBox;
+        private System.Windows.Forms.TextBox telefoneTextBox;
+        private System.Windows.Forms.TextBox cepTextBox;
         private System.Windows.Forms.TextBox cidadeTextBox;
-        private System.Windows.Forms.TextBox logTextBox;
+        private System.Windows.Forms.TextBox logradouroTextBox;
+        private System.Windows.Forms.TextBox nomeTextBox;
+        private System.Windows.Forms.TextBox cpfTextBox;
         private System.Windows.Forms.Label nomeLabelText;
         private System.Windows.Forms.Label cpfLabelText;
         private System.Windows.Forms.Label rgLabelText;
@@ -233,5 +269,8 @@
         private System.Windows.Forms.Label cepLabelText;
         private System.Windows.Forms.Label cidadeLabelText;
         private System.Windows.Forms.Label logradouroLabelText;
+        private System.Windows.Forms.Button recuperarClienteButton;
+        private System.Windows.Forms.Button apagarClienteButton;
+        private System.Windows.Forms.Button alterarClienteButton;
     }
 }
