@@ -35,5 +35,31 @@ namespace SisFarma.model.DAO
                     + exc.Message);
             }
         }
+
+        public void alterarProduto(Produto produto)
+        {
+            try
+            {
+                clientFireBase.Update("P" + produto.Id, produto);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao alterar um produto" + "\n"
+                    + exc.Message);
+            }
+        }
+
+        public void deletarProduto(Produto produto)
+        {
+            try
+            {
+                clientFireBase.Delete("P" + produto.Id);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao deletar um produto" + "\n"
+                    + exc.Message);
+            }
+        }
     }
 }

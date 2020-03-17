@@ -32,5 +32,31 @@ namespace SisFarma.controller.controllers
                     + exc.Message);
             }
         }
+
+        public void alterarProduto(Produto produto)
+        {
+            try
+            {
+                produtoDAO.alterarProduto(produto);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao alterar um produto" + "\n"
+                    + exc.Message);
+            }
+        }
+
+        public void deletarProduto(Produto produto)
+        {
+            try
+            {
+                produtoDAO.deletarProduto(produto);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao deletar um produto" + "\n"
+                    + exc.Message);
+            }
+        }
     }
 }

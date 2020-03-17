@@ -42,9 +42,40 @@ namespace SisFarma.view
             }
             catch (Exception exc)
             {
-                MessageBox.Show("Ocorreu um erro ao cadastar o produto " + exc.Message);
+                MessageBox.Show("Ocorreu um erro ao cadastar o produto ");
             }
         }
 
+        private void alterarProdutoButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Produto produtoAdicionado = new Produto(1, descricaoTextBox.Text, 2.5, "");
+                pController.alterarProduto(produtoAdicionado);
+
+                MessageBox.Show("Produto alterado com sucesso!");
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Ocorreu um erro ao alterar o produto." );
+            }
+        }
+
+        private void deletarProdutoButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Produto produtoAdicionado = new Produto(1, descricaoTextBox.Text, 2.5, "");
+                pController.deletarProduto(produtoAdicionado);
+
+                MessageBox.Show("Produto deletado com sucesso!");
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Ocorreu um erro ao deletar o produto ");
+            }
+        }
     }
 }

@@ -33,6 +33,9 @@
             this.precoLabel = new System.Windows.Forms.Label();
             this.descricaoLabel = new System.Windows.Forms.Label();
             this.precoTextBox = new System.Windows.Forms.TextBox();
+            this.recuperarProdutoButton = new System.Windows.Forms.Button();
+            this.alterarProdutoButton = new System.Windows.Forms.Button();
+            this.deletarProdutoButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // adicionarProdutoButton
@@ -79,11 +82,43 @@
             this.precoTextBox.Size = new System.Drawing.Size(100, 20);
             this.precoTextBox.TabIndex = 2;
             // 
+            // recuperarProdutoButton
+            // 
+            this.recuperarProdutoButton.Location = new System.Drawing.Point(428, 269);
+            this.recuperarProdutoButton.Name = "recuperarProdutoButton";
+            this.recuperarProdutoButton.Size = new System.Drawing.Size(75, 23);
+            this.recuperarProdutoButton.TabIndex = 5;
+            this.recuperarProdutoButton.Text = "Recuperar";
+            this.recuperarProdutoButton.UseVisualStyleBackColor = true;
+            // 
+            // alterarProdutoButton
+            // 
+            this.alterarProdutoButton.Location = new System.Drawing.Point(308, 331);
+            this.alterarProdutoButton.Name = "alterarProdutoButton";
+            this.alterarProdutoButton.Size = new System.Drawing.Size(75, 23);
+            this.alterarProdutoButton.TabIndex = 6;
+            this.alterarProdutoButton.Text = "Alterar";
+            this.alterarProdutoButton.UseVisualStyleBackColor = true;
+            this.alterarProdutoButton.Click += new System.EventHandler(this.alterarProdutoButton_Click);
+            // 
+            // deletarProdutoButton
+            // 
+            this.deletarProdutoButton.Location = new System.Drawing.Point(428, 331);
+            this.deletarProdutoButton.Name = "deletarProdutoButton";
+            this.deletarProdutoButton.Size = new System.Drawing.Size(75, 23);
+            this.deletarProdutoButton.TabIndex = 7;
+            this.deletarProdutoButton.Text = "Deletar";
+            this.deletarProdutoButton.UseVisualStyleBackColor = true;
+            this.deletarProdutoButton.Click += new System.EventHandler(this.deletarProdutoButton_Click);
+            // 
             // ProdutoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.deletarProdutoButton);
+            this.Controls.Add(this.alterarProdutoButton);
+            this.Controls.Add(this.recuperarProdutoButton);
             this.Controls.Add(this.descricaoLabel);
             this.Controls.Add(this.precoLabel);
             this.Controls.Add(this.precoTextBox);
@@ -103,5 +138,8 @@
         private System.Windows.Forms.Label precoLabel;
         private System.Windows.Forms.Label descricaoLabel;
         private System.Windows.Forms.TextBox precoTextBox;
+        private System.Windows.Forms.Button recuperarProdutoButton;
+        private System.Windows.Forms.Button alterarProdutoButton;
+        private System.Windows.Forms.Button deletarProdutoButton;
     }
 }
