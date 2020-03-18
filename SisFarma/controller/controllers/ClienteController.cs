@@ -19,7 +19,7 @@ namespace SisFarma.controller.controllers
         {
             clienteDAO = new ClienteDAO();
         }
-            public async void adicionarCliente(Cliente cliente)
+            public void adicionarCliente(Cliente cliente)
         {
             try
             {

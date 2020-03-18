@@ -20,7 +20,7 @@ namespace SisFarma.controller.controllers
             produtoDAO = new ProdutoDAO();
         }
 
-        public async void adicionarProduto(Produto produto)
+        public void adicionarProduto(Produto produto)
         {
             try
             {

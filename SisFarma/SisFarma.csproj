@@ -60,8 +60,10 @@
   <ItemGroup>
     <Compile Include="controller\controllers\ClienteController.cs" />
     <Compile Include="controller\controllers\ProdutoController.cs" />
+    <Compile Include="controller\controllers\UsuarioController.cs" />
     <Compile Include="model\DAO\ClienteDAO.cs" />
     <Compile Include="model\DAO\ProdutoDAO.cs" />
+    <Compile Include="model\DAO\UsuarioDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="view\ClienteView.cs">
       <SubType>Form</SubType>
