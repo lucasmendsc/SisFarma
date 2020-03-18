@@ -1,62 +1,62 @@
-﻿using System;
+﻿using FireSharp.Config;
+using FireSharp.Interfaces;
+using FireSharp.Response;
+using SisFarma.model.classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FireSharp.Config;
-using FireSharp.Interfaces;
-using FireSharp.Response;
-using SisFarma.model.classes;
 
 namespace SisFarma.model.DAO
 {
-    class ProdutoDAO
+    class PedidoDAO
     {
         IFirebaseClient clientFireBase;
         IFirebaseConfig config;
-        public ProdutoDAO()
+        public PedidoDAO()
         {
             config = new FirebaseConfig();
             config.AuthSecret = "8q9WyVQfuvRecPJUNbYnl28QwNTosqxw1axFdWhu";
-            config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/Produtos/";
+            config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/Pedidos/";
             clientFireBase = new FireSharp.FirebaseClient(config);
         }
 
-        public async void adicionarProduto(Produto produto)
+        public async void adicionarPedido(Pedido pedido)
         {
             try
             {
-                SetResponse response = await clientFireBase.SetTaskAsync("P" + produto.Id, produto);
+                SetResponse response = await clientFireBase.SetTaskAsync("P" + pedido.Id, pedido);
             }
             catch (Exception exc)
             {
-                Console.WriteLine("Ocorreu um erro ao inserir um produto" + "\n"
+                Console.WriteLine("Ocorreu um erro ao inserir um pedido" + "\n"
                     + exc.Message);
             }
         }
 
-        public void alterarProduto(Produto produto)
+        public void alterarPedido(Pedido pedido)
         {
             try
             {
-                clientFireBase.Update("P" + produto.Id, produto);
+                clientFireBase.Update("P" + pedido.Id, pedido);
             }
             catch (Exception exc)
             {
-                Console.WriteLine("Ocorreu um erro ao alterar um produto" + "\n"
+                Console.WriteLine("Ocorreu um erro ao alterar um pedido" + "\n"
                     + exc.Message);
             }
         }
 
-        public void deletarProduto(Produto produto)
+        public void deletarPedido(Pedido pedido)
         {
             try
             {
-                clientFireBase.Delete("P" + produto.Id);
+                clientFireBase.Delete("P" + pedido.Id);
             }
             catch (Exception exc)
             {
-                Console.WriteLine("Ocorreu um erro ao deletar um produto" + "\n"
+                Console.WriteLine("Ocorreu um erro ao deletar um pedido" + "\n"
                     + exc.Message);
             }
         }
