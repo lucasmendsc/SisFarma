@@ -11,17 +11,6 @@ namespace SisFarma.model.classes
         private int clienteId;
         private int produtoId;
 
-        public CurrentId(int clienteId,int produtoId)
-        {
-            this.clienteId = clienteId;
-            this.produtoId = produtoId;
-        }
-
-        public CurrentId(int clienteId)
-        {
-            this.clienteId = clienteId;
-        }
-
         public CurrentId()
         {
         }

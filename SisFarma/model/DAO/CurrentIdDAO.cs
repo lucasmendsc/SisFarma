@@ -23,12 +23,22 @@ namespace SisFarma.model.DAO
             config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/";
             clientFireBase = new FireSharp.FirebaseClient(config);
         }
-        public async void atualizarClienteId()
+        public async void atualizarId(int id)
         {
             try
             {
-                CurrentId current = new CurrentId(2,3); 
-                SetResponse response = await clientFireBase.SetTaskAsync("CurrentId/ClienteId",current);
+                CurrentId current = this.recuperarCurrentIds();
+                switch (id)
+                {
+                    case 1:
+                        current.ClienteId++;
+                        break;
+
+                    case 2:
+                        current.ProdutoId++;
+                        break;
+                }
+                SetResponse response = await clientFireBase.SetTaskAsync("CurrentId/", current);
 
             }
             catch (Exception exc)
@@ -38,23 +48,32 @@ namespace SisFarma.model.DAO
             }
         }
 
-        public async void atualizarProdutoId()
-        {
-            try
-            {
-                SetResponse response = await clientFireBase.SetTaskAsync("Produto", 1);
-
-            }
-            catch (Exception exc)
-            {
-                Console.WriteLine(exc.Message);
-
-            }
-        }
-        public int recuperarId()
+        private CurrentId recuperarCurrentIds()
         {
             FirebaseResponse response = clientFireBase.Get("CurrentId");
-            return response.ResultAs<CurrentId>().ClienteId;
+            return response.ResultAs<CurrentId>();
+        }
+        public int recuperarId(int id)
+        {
+            FirebaseResponse response = clientFireBase.Get("CurrentId");
+            try
+            {
+                switch (id)
+                {
+                    case 1:
+                        return response.ResultAs<CurrentId>().ClienteId;
+
+                    case 2:
+                        return response.ResultAs<CurrentId>().ProdutoId;
+                }
+
+
+            }
+            catch (Exception)
+            {
+
+            }
+            return 0;
         }
     }
 }

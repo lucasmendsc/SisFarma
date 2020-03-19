@@ -35,6 +35,21 @@ namespace SisFarma.model.DAO
             }
         }
 
+        public Produto recuperarProduto(int id)
+        {
+            try
+            {
+                FirebaseResponse response = clientFireBase.Get("P" + id);
+                return response.ResultAs<Produto>();
+
+            }catch(Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao recuperar um produto" + "\n"
+                    + exc.Message);
+                return null;
+            }
+        }
+
         public void alterarProduto(Produto produto)
         {
             try
