@@ -48,7 +48,8 @@
             this.recuperarClienteButton = new System.Windows.Forms.Button();
             this.apagarClienteButton = new System.Windows.Forms.Button();
             this.alterarClienteButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RecuperarTodosButton = new System.Windows.Forms.Button();
+            this.recuperarPorNomeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // adicionarClienteButton
@@ -191,7 +192,7 @@
             // 
             // recuperarClienteButton
             // 
-            this.recuperarClienteButton.Location = new System.Drawing.Point(457, 332);
+            this.recuperarClienteButton.Location = new System.Drawing.Point(525, 332);
             this.recuperarClienteButton.Name = "recuperarClienteButton";
             this.recuperarClienteButton.Size = new System.Drawing.Size(75, 23);
             this.recuperarClienteButton.TabIndex = 17;
@@ -201,7 +202,7 @@
             // 
             // apagarClienteButton
             // 
-            this.apagarClienteButton.Location = new System.Drawing.Point(457, 377);
+            this.apagarClienteButton.Location = new System.Drawing.Point(525, 368);
             this.apagarClienteButton.Name = "apagarClienteButton";
             this.apagarClienteButton.Size = new System.Drawing.Size(75, 23);
             this.apagarClienteButton.TabIndex = 18;
@@ -211,7 +212,7 @@
             // 
             // alterarClienteButton
             // 
-            this.alterarClienteButton.Location = new System.Drawing.Point(331, 377);
+            this.alterarClienteButton.Location = new System.Drawing.Point(336, 368);
             this.alterarClienteButton.Name = "alterarClienteButton";
             this.alterarClienteButton.Size = new System.Drawing.Size(75, 23);
             this.alterarClienteButton.TabIndex = 19;
@@ -219,22 +220,33 @@
             this.alterarClienteButton.UseVisualStyleBackColor = true;
             this.alterarClienteButton.Click += new System.EventHandler(this.alterarClienteButton_Click);
             // 
-            // button1
+            // RecuperarTodosButton
             // 
-            this.button1.Location = new System.Drawing.Point(401, 406);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.RecuperarTodosButton.Location = new System.Drawing.Point(331, 426);
+            this.RecuperarTodosButton.Name = "RecuperarTodosButton";
+            this.RecuperarTodosButton.Size = new System.Drawing.Size(269, 23);
+            this.RecuperarTodosButton.TabIndex = 20;
+            this.RecuperarTodosButton.Text = "Recuperar Todos";
+            this.RecuperarTodosButton.UseVisualStyleBackColor = true;
+            this.RecuperarTodosButton.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // recuperarPorNomeButton
+            // 
+            this.recuperarPorNomeButton.Location = new System.Drawing.Point(331, 397);
+            this.recuperarPorNomeButton.Name = "recuperarPorNomeButton";
+            this.recuperarPorNomeButton.Size = new System.Drawing.Size(269, 23);
+            this.recuperarPorNomeButton.TabIndex = 21;
+            this.recuperarPorNomeButton.Text = "Recuperar por nome";
+            this.recuperarPorNomeButton.UseVisualStyleBackColor = true;
+            this.recuperarPorNomeButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.recuperarPorNomeButton);
+            this.Controls.Add(this.RecuperarTodosButton);
             this.Controls.Add(this.alterarClienteButton);
             this.Controls.Add(this.apagarClienteButton);
             this.Controls.Add(this.recuperarClienteButton);
@@ -284,6 +296,7 @@
         private System.Windows.Forms.Button recuperarClienteButton;
         private System.Windows.Forms.Button apagarClienteButton;
         private System.Windows.Forms.Button alterarClienteButton;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RecuperarTodosButton;
+        private System.Windows.Forms.Button recuperarPorNomeButton;
     }
 }

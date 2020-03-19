@@ -71,5 +71,10 @@ namespace SisFarma.controller.controllers
         {
             return clienteDAO.recuperarTodos();
         }
+
+        public Cliente recuperarPorNome(string nome)
+        {
+            return clienteDAO.recuperarPorNome(nome);
+        }
     }
 }

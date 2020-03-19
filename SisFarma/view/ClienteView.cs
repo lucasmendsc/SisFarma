@@ -75,5 +75,11 @@ namespace SisFarma.view
                 MessageBox.Show(cli.Nome);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Cliente cli = clienteController.recuperarPorNome(nomeTextBox.Text);
+            MessageBox.Show("" + cli.Id);
+        }
     }
 }

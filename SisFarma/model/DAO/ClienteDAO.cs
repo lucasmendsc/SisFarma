@@ -80,7 +80,6 @@ namespace SisFarma.model.DAO
 
         public ArrayList recuperarTodos()
         {
-            
 
                 int i = 1;
                 CurrentIdDAO currentId = new CurrentIdDAO();
@@ -103,6 +102,21 @@ namespace SisFarma.model.DAO
             }
 
                 return clientes;
+        }
+
+        public Cliente recuperarPorNome(string nome)
+        {
+            ArrayList clientes = this.recuperarTodos();
+
+            foreach(Cliente cli in clientes)
+            {
+                if (cli.Nome.Equals(nome))
+                {
+                    return cli;
+                }
+            }
+
+            return null;
         }
 
     }

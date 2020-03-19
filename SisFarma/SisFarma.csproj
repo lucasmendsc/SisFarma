@@ -81,7 +81,6 @@
     <Compile Include="model\classes\Produto.cs" />
     <Compile Include="model\classes\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="view\CurentIdDAO.cs" />
     <Compile Include="view\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
