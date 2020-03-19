@@ -62,7 +62,9 @@
     <Compile Include="controller\controllers\PedidoController.cs" />
     <Compile Include="controller\controllers\ProdutoController.cs" />
     <Compile Include="controller\controllers\UsuarioController.cs" />
+    <Compile Include="model\classes\CurrentId.cs" />
     <Compile Include="model\DAO\ClienteDAO.cs" />
+    <Compile Include="model\DAO\CurrentIdDAO.cs" />
     <Compile Include="model\DAO\PedidoDAO.cs" />
     <Compile Include="model\DAO\ProdutoDAO.cs" />
     <Compile Include="model\DAO\UsuarioDAO.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="model\classes\Produto.cs" />
     <Compile Include="model\classes\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="view\CurentIdDAO.cs" />
     <Compile Include="view\MainView.cs">
       <SubType>Form</SubType>
     </Compile>

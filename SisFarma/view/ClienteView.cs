@@ -1,5 +1,6 @@
 ﻿using SisFarma.controller.controllers;
 using SisFarma.model.classes;
+using SisFarma.model.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,18 +24,12 @@ namespace SisFarma.view
 
         private void adicionarClienteButton_Click(object sender, EventArgs e)
         {
-            try
-            {
+                CurrentIdDAO current = new CurrentIdDAO();
                 clienteController.adicionarCliente(
-                new Cliente(1, logradouroTextBox.Text, cidadeTextBox.Text, cepTextBox.Text,
+                new Cliente(current.recuperarId(), logradouroTextBox.Text, cidadeTextBox.Text, cepTextBox.Text,
                 DateTime.Now, telefoneTextBox.Text, sexoTextBox.Text, rgTextBox.Text,
                 nomeTextBox.Text, cpfTextBox.Text, 5));
                 MessageBox.Show("Cliente cadastrado com sucesso!");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ocorreu um erro ao cadastrar um cliente.");
-            }
             
         }
 
@@ -42,12 +37,12 @@ namespace SisFarma.view
         {
             try
             {
-                Cliente clienteRecuperado = clienteController.recuperarCliente(1);
+                Cliente clienteRecuperado = clienteController.recuperarCliente(2);
                 MessageBox.Show(clienteRecuperado.Nome);
             }
             catch (Exception)
             {
-                MessageBox.Show("ASD");
+                MessageBox.Show("Ocorreu um erro ao recuperar um cliente");
             }
         }
 

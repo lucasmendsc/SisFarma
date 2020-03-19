@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SisFarma.model.classes;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
-using SisFarma.model.classes;
 
 namespace SisFarma.model.DAO
 {
@@ -37,25 +37,20 @@ namespace SisFarma.model.DAO
             }
         }
 
-        private async void recuperarClienteBD(int id)
+        public Cliente recuperarClienteId(int id)
         {
 
             try
             {
-                FirebaseResponse response = await clientFireBase.GetTaskAsync("C1");
-                this.clienteRetorno = response.ResultAs<Cliente>();
+                FirebaseResponse response = clientFireBase.Get("C" + id);
+                return response.ResultAs<Cliente>();
             }
             catch (Exception exc)
             {
                 Console.WriteLine("Ocorreu um erro ao recuperar um cliente " + exc.Message);
+                return null;
             }
             
-        }
-
-        public Cliente recuperarCliente(int id)
-        {
-            this.recuperarClienteBD(id);
-            return this.clienteRetorno;
         }
 
         public void alterarCliente(Cliente cliente)

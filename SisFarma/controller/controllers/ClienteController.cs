@@ -37,7 +37,7 @@ namespace SisFarma.controller.controllers
         {
             try
             {
-                return clienteDAO.recuperarCliente(id);
+                return clienteDAO.recuperarClienteBD(id);
             }
             catch (Exception exc)
             {
