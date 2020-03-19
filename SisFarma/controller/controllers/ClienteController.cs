@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SisFarma.model.classes;
 using FireSharp.Config;
 using FireSharp.Response;
 using FireSharp.Interfaces;
 using SisFarma.model.DAO;
+using System.Collections;
 
 namespace SisFarma.controller.controllers
 {
@@ -37,7 +34,7 @@ namespace SisFarma.controller.controllers
         {
             try
             {
-                return clienteDAO.recuperarClienteBD(id);
+                return clienteDAO.recuperarClienteId(id);
             }
             catch (Exception exc)
             {
@@ -68,6 +65,11 @@ namespace SisFarma.controller.controllers
             {
                 Console.WriteLine(exc.Message);
             }
+        }
+
+        public ArrayList recuperarTodos()
+        {
+            return clienteDAO.recuperarTodos();
         }
     }
 }

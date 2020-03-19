@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SisFarma.model.classes;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
+using System.Collections;
 
 namespace SisFarma.model.DAO
 {
@@ -14,7 +11,6 @@ namespace SisFarma.model.DAO
     {
         private IFirebaseClient clientFireBase;
         private IFirebaseConfig config;
-        private Cliente clienteRetorno;
 
         public ClienteDAO()
         {
@@ -80,6 +76,33 @@ namespace SisFarma.model.DAO
                 Console.WriteLine(exc.Message);
 
             }
+        }
+
+        public ArrayList recuperarTodos()
+        {
+            
+
+                int i = 1;
+                CurrentIdDAO currentId = new CurrentIdDAO();
+                int cont = currentId.recuperarId(1);
+                ArrayList clientes = new ArrayList() ;
+            while (true)
+                {
+
+                if (i >= cont - 1)
+                {
+                    break;
+                }
+                
+                FirebaseResponse response = clientFireBase.Get("C" + (i -1));
+                    Cliente cli = response.ResultAs<Cliente>();
+                
+                clientes.Add(cli);
+
+                i++;
+            }
+
+                return clientes;
         }
 
     }

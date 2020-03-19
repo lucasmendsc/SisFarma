@@ -2,13 +2,6 @@
 using SisFarma.model.classes;
 using SisFarma.model.DAO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SisFarma.view
@@ -25,8 +18,9 @@ namespace SisFarma.view
         private void adicionarClienteButton_Click(object sender, EventArgs e)
         {
                 CurrentIdDAO current = new CurrentIdDAO();
+            current.atualizarId(1);
                 clienteController.adicionarCliente(
-                new Cliente(current.recuperarId(), logradouroTextBox.Text, cidadeTextBox.Text, cepTextBox.Text,
+                new Cliente(current.recuperarId(1), logradouroTextBox.Text, cidadeTextBox.Text, cepTextBox.Text,
                 DateTime.Now, telefoneTextBox.Text, sexoTextBox.Text, rgTextBox.Text,
                 nomeTextBox.Text, cpfTextBox.Text, 5));
                 MessageBox.Show("Cliente cadastrado com sucesso!");
@@ -37,7 +31,7 @@ namespace SisFarma.view
         {
             try
             {
-                Cliente clienteRecuperado = clienteController.recuperarCliente(2);
+                Cliente clienteRecuperado = clienteController.recuperarCliente(6);
                 MessageBox.Show(clienteRecuperado.Nome);
             }
             catch (Exception)
@@ -71,6 +65,14 @@ namespace SisFarma.view
             catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao deletar o cliente.");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            foreach(Cliente cli in clienteController.recuperarTodos())
+            {
+                MessageBox.Show(cli.Nome);
             }
         }
     }

@@ -48,6 +48,7 @@
             this.recuperarClienteButton = new System.Windows.Forms.Button();
             this.apagarClienteButton = new System.Windows.Forms.Button();
             this.alterarClienteButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // adicionarClienteButton
@@ -218,11 +219,22 @@
             this.alterarClienteButton.UseVisualStyleBackColor = true;
             this.alterarClienteButton.Click += new System.EventHandler(this.alterarClienteButton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(401, 406);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ClienteView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.alterarClienteButton);
             this.Controls.Add(this.apagarClienteButton);
             this.Controls.Add(this.recuperarClienteButton);
@@ -272,5 +284,6 @@
         private System.Windows.Forms.Button recuperarClienteButton;
         private System.Windows.Forms.Button apagarClienteButton;
         private System.Windows.Forms.Button alterarClienteButton;
+        private System.Windows.Forms.Button button1;
     }
 }

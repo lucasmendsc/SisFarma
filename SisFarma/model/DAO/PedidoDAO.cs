@@ -3,10 +3,6 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using SisFarma.model.classes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SisFarma.model.DAO
 {

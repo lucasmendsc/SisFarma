@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SisFarma.model.classes;
-using FireSharp.Config;
-using FireSharp.Response;
-using FireSharp.Interfaces;
 using SisFarma.model.DAO;
 
 namespace SisFarma.controller.controllers
