@@ -53,11 +53,10 @@ namespace SisFarma.view
         {
             try
             {
-                current.atualizarId(5);
                 usuarioController.deletarUsuario
                     (new Usuario(current.recuperarId(5), nomeTextBox.Text, loginTextBox.Text,
                     senhaTextBox.Text));
-
+                current.atualizarIdsDeletados(5);
                 MessageBox.Show("Usuario deletado com sucesso!");
             }
             catch (Exception)

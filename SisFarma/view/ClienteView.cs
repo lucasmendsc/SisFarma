@@ -69,6 +69,7 @@ namespace SisFarma.view
             {
                 Cliente cliente = new Cliente();
                 clienteController.deletarCliente(cliente);
+                current.atualizarIdsDeletados(1);
                 MessageBox.Show("Cliente deletado com sucesso!");
             }
             catch (Exception)

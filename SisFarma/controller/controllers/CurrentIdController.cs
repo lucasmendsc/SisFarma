@@ -12,11 +12,11 @@ namespace SisFarma.controller.controllers
             this.currentDAO = new CurrentIdDAO();
         }
 
-        public void atualizarId(int id)
+        public void atualizarId(int cod)
         {
             try
             {
-                currentDAO.atualizarId(id);
+                currentDAO.atualizarId(cod);
 
             }catch(Exception exc)
             {
@@ -45,6 +45,20 @@ namespace SisFarma.controller.controllers
             try
             {
                 currentDAO.zerarIds();
+
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao zerar os id's"
+                     + "\n" + exc.Message);
+            }
+        }
+
+        public void atualizarIdsDeletados(int id)
+        {
+            try
+            {
+                currentDAO.atualizarDeletados(id);
 
             }
             catch (Exception exc)

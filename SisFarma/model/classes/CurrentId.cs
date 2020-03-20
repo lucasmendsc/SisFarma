@@ -13,6 +13,11 @@ namespace SisFarma.model.classes
         private int pedidoId;
         private int itemPedidoId;
         private int usuarioId;
+        private int quantCliente;
+        private int quantProduto;
+        private int quantPedido;
+        private int quantItemPedido;
+        private int quantUsuario;
         public CurrentId(int clienteId,int produtoId,int pedidoId,
             int itemPedidoId,int usuarioId)
         {
@@ -21,6 +26,7 @@ namespace SisFarma.model.classes
             this.pedidoId = pedidoId;
             this.itemPedidoId = itemPedidoId;
             this.usuarioId = usuarioId;
+            this.atualizarQuantidade();
         }
         public CurrentId()
         {
@@ -52,6 +58,42 @@ namespace SisFarma.model.classes
         {
             get { return this.usuarioId; }
             set { usuarioId = value; }
+        }
+
+        public int QuantCliente
+        {
+            get { return this.quantCliente; }
+            set { quantCliente = value; }
+        }
+        public int QuantoProduto
+        {
+            get { return this.quantProduto; }
+            set { quantProduto = value; }
+        }
+        public int QuantPedido
+        {
+            get { return this.quantPedido; }
+            set { quantPedido = value; }
+        }
+        public int QuantItemPedido
+        {
+            get { return this.quantItemPedido; }
+            set { quantItemPedido = value; }
+        }  
+        
+        public int QuantUsuario
+        {
+            get { return this.quantUsuario; }
+            set { quantUsuario = value; }
+        }
+
+        private void atualizarQuantidade()
+        {
+            this.quantCliente = this.clienteId;
+            this.quantProduto = this.produtoId;
+            this.quantPedido = this.pedidoId;
+            this.quantItemPedido = this.itemPedidoId;
+            this.quantUsuario = this.usuarioId;
         }
     }
 }

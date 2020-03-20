@@ -18,28 +18,33 @@ namespace SisFarma.model.DAO
             config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/";
             clientFireBase = new FireSharp.FirebaseClient(config);
         }
-        public async void atualizarId(int id)
+        public async void atualizarId(int cod)
         {
             try
             {
                 CurrentId current = this.recuperarCurrentIds();
-                switch (id)
+                switch (cod)
                 {
                     case 1:
                         current.ClienteId++;
+                        current.QuantCliente++;
                         break;
 
                     case 2:
                         current.ProdutoId++;
+                        current.QuantoProduto++;
                         break;
                     case 3:
                         current.ItemPedidoId++;
+                        current.QuantItemPedido++;
                         break;
                     case 4:
                         current.PedidoId++;
+                        current.QuantPedido++;
                         break;
                     case 5:
                         current.UsuarioId++;
+                        current.QuantUsuario++;
                         break;
                 }
                 SetResponse response = await clientFireBase.SetTaskAsync("CurrentId/", current);
@@ -84,9 +89,43 @@ namespace SisFarma.model.DAO
             return 0;
         }
 
+        public async void atualizarDeletados(int cod)
+        {
+            try
+            {
+                CurrentId current = this.recuperarCurrentIds();
+                switch (cod)
+                {
+                    case 1:
+                        current.QuantCliente--;
+                        break;
+
+                    case 2:
+                        current.QuantoProduto--;
+                        break;
+                    case 3:
+                        current.QuantItemPedido--;
+                        break;
+                    case 4:
+                        current.QuantPedido--;
+                        break;
+                    case 5:
+                        current.QuantUsuario--;
+                        break;
+                }
+                SetResponse response = await clientFireBase.SetTaskAsync("CurrentId/", current);
+
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.Message);
+
+            }
+        }
+
         public async void zerarIds()
         {
-            CurrentId current = new CurrentId(8, 0, 0, 6, 5);
+            CurrentId current = new CurrentId(0, 0, 0, 0, 0);
             SetResponse response = await clientFireBase.SetTaskAsync("CurrentId/", current);
         }
     }

@@ -1,5 +1,4 @@
-﻿using SisFarma.controller.controllers;
-using SisFarma.view;
+﻿using SisFarma.view;
 using System.Windows.Forms;
 
 namespace UI

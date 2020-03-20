@@ -70,7 +70,7 @@ namespace SisFarma.view
             {
                 Produto produtoAdicionado = new Produto(1, descricaoTextBox.Text, 2.5, "");
                 pController.deletarProduto(produtoAdicionado);
-
+                current.atualizarIdsDeletados(2);
                 MessageBox.Show("Produto deletado com sucesso!");
 
             }
