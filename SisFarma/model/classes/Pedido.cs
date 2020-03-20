@@ -1,8 +1,6 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SisFarma.model.classes
 {
@@ -10,8 +8,8 @@ namespace SisFarma.model.classes
     {
         private int id;
         private DateTime dataPedido;
-        private List<ItemPedido> itensPedido;
-        private Cliente cliente;
+        private ArrayList itensPedido;
+        private int codCliente;
         private double valorTotal;
         private string status;
 
@@ -19,13 +17,13 @@ namespace SisFarma.model.classes
         {
 
         }
-        public Pedido(int id,DateTime dataPedido,List<ItemPedido> itensPedido,
-            Cliente cliente,double valorTotal,string status)
+        public Pedido(int id,DateTime dataPedido,ArrayList itensPedido,
+            int codCliente, double valorTotal,string status)
         {
             this.id = id;
             this.dataPedido = dataPedido;
             this.itensPedido = itensPedido;
-            this.cliente = cliente;
+            this.codCliente = codCliente;
             this.valorTotal = valorTotal;
             this.status = status;
         }
@@ -41,16 +39,16 @@ namespace SisFarma.model.classes
             set { this.dataPedido = value; }
         }
 
-        public List<ItemPedido> ItensPedido
+        public ArrayList ItensPedido
         {
             get { return itensPedido; }
             set { this.itensPedido = value; }
         }
 
-        public Cliente Cliente
+        public int CodCliente
         {
-            get { return cliente; }
-            set { this.cliente = value; }
+            get { return codCliente; }
+            set { this.codCliente = value; }
         }
 
         public double ValorTotal

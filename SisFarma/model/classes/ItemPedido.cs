@@ -3,15 +3,15 @@
     internal class ItemPedido
     {
         private int id;
-        private Produto produto;
+        private int codProduto;
         private int quantidade;
         private double subTotal;
 
-        public ItemPedido(int id,Produto produto,int quantidade,
+        public ItemPedido(int id,int codProduto, int quantidade,
             double subTotal)
         {
             this.id = id;
-            this.produto = produto;
+            this.codProduto = codProduto;
             this.quantidade = quantidade;
             this.subTotal = subTotal;
         }
@@ -25,10 +25,10 @@
             set { this.id = value; }
         }
 
-        public Produto Produto
+        public int CodProduto
         {
-            get { return this.produto; }
-            set { this.produto = value; }
+            get { return this.codProduto; }
+            set { this.codProduto = value; }
         }
 
         public int Quantidade

@@ -11,18 +11,10 @@ namespace UI
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
         static void Main()
         {
-            PedidoDAO pedidoD = new PedidoDAO();
-            pedidoD.adicionarPedido(new Pedido());
-             Application.EnableVisualStyles();
-            //Application.SetCompatibleTextRenderingDefault(false);
+            Application.EnableVisualStyles();
             Application.Run(new MainView());
-
         }
     }
 }
