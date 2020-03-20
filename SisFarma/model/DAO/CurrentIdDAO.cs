@@ -89,6 +89,33 @@ namespace SisFarma.model.DAO
             return 0;
         }
 
+        public int recuperarQuantidade(int cod)
+        {
+            FirebaseResponse response = clientFireBase.Get("CurrentId");
+            try
+            {
+                switch (cod)
+                {
+                    case 1:
+                        return response.ResultAs<CurrentId>().QuantCliente;
+                    case 2:
+                        return response.ResultAs<CurrentId>().QuantoProduto;
+                    case 3:
+                        return response.ResultAs<CurrentId>().QuantItemPedido;
+                    case 4:
+                        return response.ResultAs<CurrentId>().QuantPedido;
+                    case 5:
+                        return response.ResultAs<CurrentId>().QuantUsuario;
+                }
+
+            }
+            catch (Exception)
+            {
+
+            }
+            return 0;
+        }
+
         public async void atualizarDeletados(int cod)
         {
             try

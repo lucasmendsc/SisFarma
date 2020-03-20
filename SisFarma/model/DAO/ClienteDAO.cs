@@ -81,10 +81,11 @@ namespace SisFarma.model.DAO
         public ArrayList recuperarTodos()
         {
 
-                int i = 1;
-                CurrentIdDAO currentId = new CurrentIdDAO();
-                int cont = currentId.recuperarId(1);
-                ArrayList clientes = new ArrayList() ;
+        int i = 1;
+        CurrentIdDAO currentId = new CurrentIdDAO();
+        int cont = currentId.recuperarQuantidade(1);
+        ArrayList clientes = new ArrayList() ;
+
             while (true)
                 {
 
@@ -94,10 +95,8 @@ namespace SisFarma.model.DAO
                 }
                 
                 FirebaseResponse response = clientFireBase.Get("C" + (i -1));
-                    Cliente cli = response.ResultAs<Cliente>();
-                
+                Cliente cli = response.ResultAs<Cliente>();
                 clientes.Add(cli);
-
                 i++;
             }
 

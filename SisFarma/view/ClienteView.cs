@@ -21,7 +21,7 @@ namespace SisFarma.view
         {
             try
             {
-                
+                current.atualizarId(1);
                 clienteController.adicionarCliente(
                     new Cliente(current.recuperarId(1), logradouroTextBox.Text,
                         cidadeTextBox.Text, cepTextBox.Text, DateTime.Now, telefoneTextBox.Text,

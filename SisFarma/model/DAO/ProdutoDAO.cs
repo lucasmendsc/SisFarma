@@ -93,7 +93,7 @@ namespace SisFarma.model.DAO
 
             int i = 0;
             CurrentIdDAO currentId = new CurrentIdDAO();
-            int cont = currentId.recuperarId(2);
+            int cont = currentId.recuperarQuantidade(2);
             ArrayList produtos = new ArrayList();
             while (true)
             {
