@@ -7,69 +7,69 @@ using System.Collections;
 
 namespace SisFarma.model.DAO
 {
-    class PedidoDAO
+    class ItemPedidoDAO
     {
         IFirebaseClient clientFireBase;
         IFirebaseConfig config;
-        public PedidoDAO()
+        public ItemPedidoDAO()
         {
             config = new FirebaseConfig();
             config.AuthSecret = "8q9WyVQfuvRecPJUNbYnl28QwNTosqxw1axFdWhu";
-            config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/Pedidos/";
+            config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/ItensPedidos/";
             clientFireBase = new FireSharp.FirebaseClient(config);
         }
 
-        public async void adicionarPedido(Pedido pedido)
+        public async void adicionarItemPedido(ItemPedido itemPedido)
         {
             try
             {
-                SetResponse response = await clientFireBase.SetTaskAsync("P" + pedido.Id, pedido);
+                SetResponse response = await clientFireBase.SetTaskAsync("I" + itemPedido.Id, itemPedido);
             }
             catch (Exception exc)
             {
-                Console.WriteLine("Ocorreu um erro ao inserir um pedido" + "\n"
+                Console.WriteLine("Ocorreu um erro ao inserir um item Pedido" + "\n"
                     + exc.Message);
             }
         }
 
-        public void alterarPedido(Pedido pedido)
+        public void alterarItemPedido(ItemPedido itemPedido)
         {
             try
             {
-                clientFireBase.Update("P" + pedido.Id, pedido);
+                clientFireBase.Update("I" + itemPedido.Id, itemPedido);
             }
             catch (Exception exc)
             {
-                Console.WriteLine("Ocorreu um erro ao alterar um pedido" + "\n"
+                Console.WriteLine("Ocorreu um erro ao alterar um item Pedido" + "\n"
                     + exc.Message);
             }
         }
 
-        public Produto recuperarProdutoId(int id)
+        public ItemPedido recuperarItemPedidoId(int id)
         {
 
             try
             {
-                FirebaseResponse response = clientFireBase.Get("P" + id);
-                return response.ResultAs<Produto>();
+                FirebaseResponse response = clientFireBase.Get("I" + id);
+                return response.ResultAs<ItemPedido>();
             }
             catch (Exception exc)
             {
-                Console.WriteLine("Ocorreu um erro ao recuperar um produto " + exc.Message);
+                Console.WriteLine("Ocorreu um erro ao recuperar um item Pedido " + exc.Message);
                 return null;
             }
 
         }
 
-        public void deletarPedido(Pedido pedido)
+        public void deletarItemPedido(ItemPedido pedido)
         {
             try
             {
-                clientFireBase.Delete("P" + pedido.Id);
+                clientFireBase.Delete("I" + pedido.Id);
             }
             catch (Exception exc)
             {
-                Console.WriteLine("Ocorreu um erro ao deletar um pedido" + "\n"
+                Console.WriteLine("Ocorreu um erro ao deletar um item Pedido" + "\n"
                     + exc.Message);
             }
         }
@@ -79,8 +79,8 @@ namespace SisFarma.model.DAO
 
             int i = 1;
             CurrentIdDAO currentId = new CurrentIdDAO();
-            int cont = currentId.recuperarId(4);
-            ArrayList produtos = new ArrayList();
+            int cont = currentId.recuperarId(2);
+            ArrayList itensPedidos = new ArrayList();
             while (true)
             {
 
@@ -89,15 +89,15 @@ namespace SisFarma.model.DAO
                     break;
                 }
 
-                FirebaseResponse response = clientFireBase.Get("P" + i);
-                Produto prod = response.ResultAs<Produto>();
+                FirebaseResponse response = clientFireBase.Get("I" + i);
+                ItemPedido itemProduto = response.ResultAs<ItemPedido>();
 
-                produtos.Add(prod);
+                itensPedidos.Add(itemProduto);
 
                 i++;
             }
 
-            return produtos;
+            return itensPedidos;
         }
     }
 }

@@ -7,6 +7,18 @@
         private int quantidade;
         private double subTotal;
 
+        public ItemPedido(int id,Produto produto,int quantidade,
+            double subTotal)
+        {
+            this.id = id;
+            this.produto = produto;
+            this.quantidade = quantidade;
+            this.subTotal = subTotal;
+        }
+        public ItemPedido()
+        {
+
+        }
         public int Id
         {
             get { return id; }

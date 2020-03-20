@@ -65,6 +65,7 @@
     <Compile Include="model\classes\CurrentId.cs" />
     <Compile Include="model\DAO\ClienteDAO.cs" />
     <Compile Include="model\DAO\CurrentIdDAO.cs" />
+    <Compile Include="model\DAO\ItemPedidoDAO.cs" />
     <Compile Include="model\DAO\PedidoDAO.cs" />
     <Compile Include="model\DAO\ProdutoDAO.cs" />
     <Compile Include="model\DAO\UsuarioDAO.cs" />

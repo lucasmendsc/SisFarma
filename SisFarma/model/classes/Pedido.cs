@@ -19,6 +19,16 @@ namespace SisFarma.model.classes
         {
 
         }
+        public Pedido(int id,DateTime dataPedido,List<ItemPedido> itensPedido,
+            Cliente cliente,double valorTotal,string status)
+        {
+            this.id = id;
+            this.dataPedido = dataPedido;
+            this.itensPedido = itensPedido;
+            this.cliente = cliente;
+            this.valorTotal = valorTotal;
+            this.status = status;
+        }
 
         public int Id {
             get { return id; }

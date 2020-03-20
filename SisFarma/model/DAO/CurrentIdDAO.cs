@@ -10,7 +10,6 @@ namespace SisFarma.model.DAO
     {
         private IFirebaseClient clientFireBase;
         private IFirebaseConfig config;
-        public CurrentId current;
 
         public CurrentIdDAO()
         {
@@ -32,6 +31,12 @@ namespace SisFarma.model.DAO
 
                     case 2:
                         current.ProdutoId++;
+                        break;
+                    case 3:
+                        current.ItemPedidoId++;
+                        break;
+                    case 4:
+                        current.PedidoId++;
                         break;
                 }
                 SetResponse response = await clientFireBase.SetTaskAsync("CurrentId/", current);
@@ -58,11 +63,13 @@ namespace SisFarma.model.DAO
                 {
                     case 1:
                         return response.ResultAs<CurrentId>().ClienteId;
-
                     case 2:
                         return response.ResultAs<CurrentId>().ProdutoId;
+                    case 3:
+                        return response.ResultAs<CurrentId>().ItemPedidoId;
+                    case 4:
+                        return response.ResultAs<CurrentId>().PedidoId;
                 }
-
 
             }
             catch (Exception)
@@ -70,6 +77,12 @@ namespace SisFarma.model.DAO
 
             }
             return 0;
+        }
+
+        public async void zerarIds()
+        {
+            CurrentId current = new CurrentId(0, 0, 0, 0);
+            SetResponse response = await clientFireBase.SetTaskAsync("CurrentId/", current);
         }
     }
 }

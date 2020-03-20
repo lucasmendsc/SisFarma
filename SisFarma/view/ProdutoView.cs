@@ -58,7 +58,7 @@ namespace SisFarma.view
         {
             try
             {
-                Produto produtoAdicionado = new Produto(1, descricaoTextBox.Text, 2.5, "");
+                Produto produtoAdicionado = new Produto(4, descricaoTextBox.Text, 6.5, "222");
                 pController.alterarProduto(produtoAdicionado);
 
                 MessageBox.Show("Produto alterado com sucesso!");

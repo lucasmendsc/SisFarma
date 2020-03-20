@@ -1,4 +1,5 @@
-﻿using SisFarma.model.DAO;
+﻿using SisFarma.model.classes;
+using SisFarma.model.DAO;
 using SisFarma.view;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,8 @@ namespace UI
         [STAThread]
         static void Main()
         {
+            PedidoDAO pedidoD = new PedidoDAO();
+            pedidoD.adicionarPedido(new Pedido());
              Application.EnableVisualStyles();
             //Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainView());
