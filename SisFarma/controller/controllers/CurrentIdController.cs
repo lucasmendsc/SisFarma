@@ -6,8 +6,7 @@ namespace SisFarma.controller.controllers
 {
     class CurrentIdController
     {
-        CurrentIdDAO currentDAO;
-
+        private CurrentIdDAO currentDAO;
         public CurrentIdController()
         {
             this.currentDAO = new CurrentIdDAO();

@@ -7,8 +7,7 @@ namespace SisFarma.controller.controllers
 {
     class PedidoController
     {
-        PedidoDAO pedidoDAO;
-
+        private PedidoDAO pedidoDAO;
         public PedidoController()
         {
             pedidoDAO = new PedidoDAO();

@@ -9,8 +9,8 @@ namespace SisFarma.model.DAO
 {
     class ItemPedidoDAO
     {
-        IFirebaseClient clientFireBase;
-        IFirebaseConfig config;
+        private IFirebaseClient clientFireBase;
+        private IFirebaseConfig config;
         public ItemPedidoDAO()
         {
             config = new FirebaseConfig();

@@ -86,7 +86,7 @@ namespace SisFarma.model.DAO
 
         public async void zerarIds()
         {
-            CurrentId current = new CurrentId(0, 0, 0, 0, 0);
+            CurrentId current = new CurrentId(8, 0, 0, 6, 5);
             SetResponse response = await clientFireBase.SetTaskAsync("CurrentId/", current);
         }
     }

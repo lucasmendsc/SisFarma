@@ -7,8 +7,7 @@ namespace SisFarma.controller.controllers
 {
     class ProdutoController
     {
-        ProdutoDAO produtoDAO;
-
+        private ProdutoDAO produtoDAO;
         public ProdutoController()
         {
             produtoDAO = new ProdutoDAO();

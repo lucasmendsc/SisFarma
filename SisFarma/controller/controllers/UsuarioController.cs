@@ -7,8 +7,7 @@ namespace SisFarma.controller.controllers
 {
     class UsuarioController
     {
-        UsuarioDAO usuarioDAO;
-
+        private UsuarioDAO usuarioDAO;
         public UsuarioController()
         {
             usuarioDAO = new UsuarioDAO();

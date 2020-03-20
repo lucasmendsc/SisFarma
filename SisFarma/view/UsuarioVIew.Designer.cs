@@ -60,6 +60,7 @@
             this.deletarButton.TabIndex = 6;
             this.deletarButton.Text = "Deletar";
             this.deletarButton.UseVisualStyleBackColor = true;
+            this.deletarButton.Click += new System.EventHandler(this.deletarButton_Click);
             // 
             // recuperarTodosButton
             // 
@@ -69,6 +70,7 @@
             this.recuperarTodosButton.TabIndex = 7;
             this.recuperarTodosButton.Text = "Recuperar Todos";
             this.recuperarTodosButton.UseVisualStyleBackColor = true;
+            this.recuperarTodosButton.Click += new System.EventHandler(this.recuperarTodosButton_Click);
             // 
             // alterarButton
             // 
@@ -78,6 +80,7 @@
             this.alterarButton.TabIndex = 5;
             this.alterarButton.Text = "Alterar";
             this.alterarButton.UseVisualStyleBackColor = true;
+            this.alterarButton.Click += new System.EventHandler(this.alterarButton_Click);
             // 
             // senhaTextBox
             // 

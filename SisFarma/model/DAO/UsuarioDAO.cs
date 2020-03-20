@@ -9,8 +9,8 @@ namespace SisFarma.model.DAO
 {
     class UsuarioDAO
     {
-        IFirebaseClient clientFireBase;
-        IFirebaseConfig config;
+        private IFirebaseClient clientFireBase;
+        private IFirebaseConfig config;
 
         public UsuarioDAO()
         {
@@ -67,7 +67,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                clientFireBase.Update("P" + usuario.Id, usuario);
+                clientFireBase.Update("U" + usuario.Id, usuario);
             }
             catch (Exception exc)
             {
@@ -104,7 +104,7 @@ namespace SisFarma.model.DAO
                     break;
                 }
 
-                FirebaseResponse response = clientFireBase.Get("U" + (i - 1));
+                FirebaseResponse response = clientFireBase.Get("U" + i );
                 Usuario user = response.ResultAs<Usuario>();
 
                 usuarios.Add(user);

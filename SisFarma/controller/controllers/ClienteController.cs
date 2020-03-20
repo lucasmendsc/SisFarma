@@ -10,7 +10,7 @@ namespace SisFarma.controller.controllers
 {
     class ClienteController
     {
-        ClienteDAO clienteDAO;
+        private ClienteDAO clienteDAO;
 
         public ClienteController()
         {
