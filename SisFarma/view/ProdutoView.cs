@@ -2,23 +2,18 @@
 using SisFarma.model.classes;
 using SisFarma.model.DAO;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SisFarma.view
 {
     public partial class ProdutoView : Form
     {
-        ProdutoController pController = new ProdutoController();
+        private ProdutoController pController;
+        private CurrentIdController current;
         public ProdutoView()
         {
+            pController = new ProdutoController();
+            current = new CurrentIdController();
             InitializeComponent();
         }
 
@@ -26,7 +21,6 @@ namespace SisFarma.view
         {
             try
             {
-                CurrentIdDAO current = new CurrentIdDAO();
                 current.atualizarId(2);
                 Produto produtoAdicionado = new Produto(current.recuperarId(2), descricaoTextBox.Text, 2.5, "");
                 pController.adicionarProduto(produtoAdicionado);

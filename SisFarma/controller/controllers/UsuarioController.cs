@@ -1,6 +1,7 @@
 ﻿using SisFarma.model.classes;
 using SisFarma.model.DAO;
 using System;
+using System.Collections;
 
 namespace SisFarma.controller.controllers
 {
@@ -39,6 +40,34 @@ namespace SisFarma.controller.controllers
             }
         }
 
+        public Usuario recuperarUsuarioId(int id)
+        {
+            try
+            {
+                return usuarioDAO.recuperarUsuarioId(id);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao alterar um usuario" + "\n"
+                    + exc.Message);
+                return null;
+            }
+        }
+
+        public Usuario recuperarUsuarioPorNome(string nome)
+        {
+            try
+            {
+                return usuarioDAO.recuperarPorNome(nome);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao alterar um usuario" + "\n"
+                    + exc.Message);
+                return null;
+            }
+        }
+
         public void deletarUsuario(Usuario usuario)
         {
             try
@@ -50,6 +79,16 @@ namespace SisFarma.controller.controllers
                 Console.WriteLine("Ocorreu um erro ao deletar um usuario" + "\n"
                     + exc.Message);
             }
+        }
+
+        public ArrayList recuperarTodos()
+        {
+            return usuarioDAO.recuperarTodos();
+        }
+
+        public bool logar(string login,string senha)
+        {
+            return usuarioDAO.logar(login, senha);
         }
     }
 }

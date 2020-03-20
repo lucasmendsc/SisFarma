@@ -17,6 +17,15 @@ namespace SisFarma.model.classes
         {
 
         }
+
+        public Usuario(int id,string nome,string login,string senha)
+        {
+            this.id = id;
+            this.nome = nome;
+            this.login = login;
+            this.senha = senha;
+
+        }
         public int Id {
             get { return id; }
             set { this.id = value; }

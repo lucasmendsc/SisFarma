@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\controllers\ClienteController.cs" />
+    <Compile Include="controller\controllers\CurrentIdController.cs" />
     <Compile Include="controller\controllers\PedidoController.cs" />
     <Compile Include="controller\controllers\ProdutoController.cs" />
     <Compile Include="controller\controllers\UsuarioController.cs" />
@@ -88,11 +89,23 @@
     <Compile Include="view\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\PedidoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\PedidoView.Designer.cs">
+      <DependentUpon>PedidoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\ProdutoView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="view\ProdutoView.Designer.cs">
       <DependentUpon>ProdutoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\UsuarioVIew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\UsuarioVIew.Designer.cs">
+      <DependentUpon>UsuarioVIew.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,8 +122,14 @@
     <EmbeddedResource Include="view\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\PedidoView.resx">
+      <DependentUpon>PedidoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\ProdutoView.resx">
       <DependentUpon>ProdutoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\UsuarioVIew.resx">
+      <DependentUpon>UsuarioVIew.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="controller\resources\json.csproj" />
     <None Include="packages.config" />

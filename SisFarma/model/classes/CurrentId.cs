@@ -12,13 +12,15 @@ namespace SisFarma.model.classes
         private int produtoId;
         private int pedidoId;
         private int itemPedidoId;
+        private int usuarioId;
         public CurrentId(int clienteId,int produtoId,int pedidoId,
-            int itemPedidoId)
+            int itemPedidoId,int usuarioId)
         {
             this.clienteId = clienteId;
             this.produtoId = produtoId;
             this.pedidoId = pedidoId;
             this.itemPedidoId = itemPedidoId;
+            this.usuarioId = usuarioId;
         }
         public CurrentId()
         {
@@ -44,6 +46,12 @@ namespace SisFarma.model.classes
         {
             get { return this.itemPedidoId; }
             set { itemPedidoId = value; }
+        }
+
+        public int UsuarioId
+        {
+            get { return this.usuarioId; }
+            set { usuarioId = value; }
         }
     }
 }

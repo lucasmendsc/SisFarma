@@ -24,8 +24,13 @@ namespace SisFarma.view
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new ProdutoView().Show() ;
+            new ProdutoView().Show();
             
+        }
+
+        private void usuarioViewButton_Click(object sender, EventArgs e)
+        {
+            new UsuarioVIew().Show();
         }
     }
 }

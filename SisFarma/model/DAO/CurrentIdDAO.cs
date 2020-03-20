@@ -38,6 +38,9 @@ namespace SisFarma.model.DAO
                     case 4:
                         current.PedidoId++;
                         break;
+                    case 5:
+                        current.UsuarioId++;
+                        break;
                 }
                 SetResponse response = await clientFireBase.SetTaskAsync("CurrentId/", current);
 
@@ -54,12 +57,12 @@ namespace SisFarma.model.DAO
             FirebaseResponse response = clientFireBase.Get("CurrentId");
             return response.ResultAs<CurrentId>();
         }
-        public int recuperarId(int id)
+        public int recuperarId(int cod)
         {
             FirebaseResponse response = clientFireBase.Get("CurrentId");
             try
             {
-                switch (id)
+                switch (cod)
                 {
                     case 1:
                         return response.ResultAs<CurrentId>().ClienteId;
@@ -69,6 +72,8 @@ namespace SisFarma.model.DAO
                         return response.ResultAs<CurrentId>().ItemPedidoId;
                     case 4:
                         return response.ResultAs<CurrentId>().PedidoId;
+                    case 5:
+                        return response.ResultAs<CurrentId>().UsuarioId;
                 }
 
             }
@@ -81,7 +86,7 @@ namespace SisFarma.model.DAO
 
         public async void zerarIds()
         {
-            CurrentId current = new CurrentId(0, 0, 0, 0);
+            CurrentId current = new CurrentId(0, 0, 0, 0, 0);
             SetResponse response = await clientFireBase.SetTaskAsync("CurrentId/", current);
         }
     }

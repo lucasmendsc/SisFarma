@@ -3,6 +3,7 @@ using FireSharp.Interfaces;
 using FireSharp.Response;
 using SisFarma.model.classes;
 using System;
+using System.Collections;
 
 namespace SisFarma.model.DAO
 {
@@ -32,6 +33,36 @@ namespace SisFarma.model.DAO
             }
         }
 
+        public Usuario recuperarUsuarioId(int id)
+        {
+            try
+            {
+                FirebaseResponse response = clientFireBase.Get("U" + id);
+                return response.ResultAs<Usuario>();
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao alterar um usuario" + "\n"
+                    + exc.Message);
+                return null;
+            }
+        }
+
+        public Usuario recuperarPorNome(string login)
+        {
+            ArrayList usuarios = this.recuperarTodos();
+
+            foreach (Usuario user in usuarios)
+            {
+                if (user.Login.Equals(login))
+                {
+                    return user;
+                }
+            }
+
+            return null;
+        }
+
         public void alterarUsuario(Usuario usuario)
         {
             try
@@ -57,5 +88,45 @@ namespace SisFarma.model.DAO
                     + exc.Message);
             }
         }
+
+        public ArrayList recuperarTodos()
+        {
+
+            int i = 1;
+            CurrentIdDAO currentId = new CurrentIdDAO();
+            int cont = currentId.recuperarId(5);
+            ArrayList usuarios = new ArrayList();
+            while (true)
+            {
+
+                if (i >= cont - 1)
+                {
+                    break;
+                }
+
+                FirebaseResponse response = clientFireBase.Get("U" + (i - 1));
+                Usuario user = response.ResultAs<Usuario>();
+
+                usuarios.Add(user);
+
+                i++;
+            }
+
+            return usuarios;
+        }
+
+        public bool logar(string login, string senha)
+        {
+            ArrayList usuarios = this.recuperarTodos();
+
+            foreach(Usuario user in usuarios)
+            {
+                if (user.Login.Equals(login) && user.Senha.Equals(senha))
+                    return true;
+            }
+            return false;
+        }
+
     }
+
 }

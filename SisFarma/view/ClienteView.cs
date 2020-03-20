@@ -8,22 +8,31 @@ namespace SisFarma.view
 {
     public partial class ClienteView : Form
     {
-        ClienteController clienteController;
+        private ClienteController clienteController;
+        private CurrentIdController current;
         public ClienteView()
         {
             clienteController = new ClienteController();
+            current = new CurrentIdController();
             InitializeComponent();
         }
 
         private void adicionarClienteButton_Click(object sender, EventArgs e)
         {
-                CurrentIdDAO current = new CurrentIdDAO();
-            current.atualizarId(1);
+            try
+            {
+                
                 clienteController.adicionarCliente(
-                new Cliente(current.recuperarId(1), logradouroTextBox.Text, cidadeTextBox.Text, cepTextBox.Text,
-                DateTime.Now, telefoneTextBox.Text, sexoTextBox.Text, rgTextBox.Text,
-                nomeTextBox.Text, cpfTextBox.Text, 5));
+                    new Cliente(current.recuperarId(1), logradouroTextBox.Text,
+                        cidadeTextBox.Text, cepTextBox.Text, DateTime.Now, telefoneTextBox.Text,
+                        sexoTextBox.Text, rgTextBox.Text, nomeTextBox.Text, cpfTextBox.Text, 5));
+
                 MessageBox.Show("Cliente cadastrado com sucesso!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao cadastrar o cliente.");
+            }               
             
         }
 

@@ -1,10 +1,4 @@
-﻿using SisFarma.model.classes;
-using SisFarma.model.DAO;
-using SisFarma.view;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using SisFarma.view;
 using System.Windows.Forms;
 
 namespace UI
