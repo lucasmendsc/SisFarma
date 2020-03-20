@@ -1,6 +1,7 @@
 ﻿using SisFarma.model.classes;
 using SisFarma.model.DAO;
 using System;
+using System.Collections;
 
 namespace SisFarma.controller.controllers
 {
@@ -51,5 +52,22 @@ namespace SisFarma.controller.controllers
                     + exc.Message);
             }
         }
+
+        public ArrayList recuperarTodos()
+        {
+            try
+            {
+                return pedidoDAO.recuperarTodos();
+
+            }
+            catch(Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao recuperar todos " + "\n"
+                    + exc.Message);
+                return null;
+            }
+            
+        }
+
     }
 }

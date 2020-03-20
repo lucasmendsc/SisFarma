@@ -7,19 +7,16 @@
         private double valor;
         private string foto;
 
+        public Produto()
+        {
+
+        }
         public Produto(int id,string descricao,double valor,string foto)
         {
             this.id = id;
             this.descricao = descricao;
             this.valor = valor;
             this.foto = foto;
-        }
-
-        public Produto(int id, string descricao, double valor)
-        {
-            this.id = id;
-            this.descricao = descricao;
-            this.valor = valor;
         }
         public int Id
         {

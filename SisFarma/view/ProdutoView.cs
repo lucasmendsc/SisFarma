@@ -1,6 +1,8 @@
 ﻿using SisFarma.controller.controllers;
 using SisFarma.model.classes;
+using SisFarma.model.DAO;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,29 +22,35 @@ namespace SisFarma.view
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void adicionarProdutoButton_Click(object sender, EventArgs e)
         {
             try
             {
-                Produto produtoAdicionado = new Produto(1, descricaoTextBox.Text, 2.5, "");
+                CurrentIdDAO current = new CurrentIdDAO();
+                current.atualizarId(2);
+                Produto produtoAdicionado = new Produto(current.recuperarId(2), descricaoTextBox.Text, 2.5, "");
                 pController.adicionarProduto(produtoAdicionado);
 
                 MessageBox.Show("Produto cadastrado com sucesso!");
 
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao cadastar o produto ");
+            }
+        }
+
+        private void recuperarPorDescButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Produto produto = pController.recuperarPorDescricao(descricaoTextBox.Text);
+                MessageBox.Show(produto.Id + "");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao recuperar o produto por descrição.");
             }
         }
 
@@ -56,7 +64,7 @@ namespace SisFarma.view
                 MessageBox.Show("Produto alterado com sucesso!");
 
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao alterar o produto." );
             }
@@ -72,9 +80,17 @@ namespace SisFarma.view
                 MessageBox.Show("Produto deletado com sucesso!");
 
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao deletar o produto ");
+            }
+        }
+
+        private void recuperarTodosButton_Click(object sender, EventArgs e)
+        {
+            foreach(Produto p in pController.recuperarTodos())
+            {
+                MessageBox.Show(p.Descricao);
             }
         }
     }

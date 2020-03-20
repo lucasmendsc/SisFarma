@@ -57,7 +57,7 @@
             this.adicionarClienteButton.Location = new System.Drawing.Point(335, 332);
             this.adicionarClienteButton.Name = "adicionarClienteButton";
             this.adicionarClienteButton.Size = new System.Drawing.Size(75, 23);
-            this.adicionarClienteButton.TabIndex = 0;
+            this.adicionarClienteButton.TabIndex = 8;
             this.adicionarClienteButton.Text = "Adicionar";
             this.adicionarClienteButton.UseVisualStyleBackColor = true;
             this.adicionarClienteButton.Click += new System.EventHandler(this.adicionarClienteButton_Click);
@@ -67,56 +67,56 @@
             this.rgTextBox.Location = new System.Drawing.Point(386, 160);
             this.rgTextBox.Name = "rgTextBox";
             this.rgTextBox.Size = new System.Drawing.Size(100, 20);
-            this.rgTextBox.TabIndex = 1;
+            this.rgTextBox.TabIndex = 2;
             // 
             // sexoTextBox
             // 
             this.sexoTextBox.Location = new System.Drawing.Point(386, 186);
             this.sexoTextBox.Name = "sexoTextBox";
             this.sexoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.sexoTextBox.TabIndex = 2;
+            this.sexoTextBox.TabIndex = 3;
             // 
             // telefoneTextBox
             // 
             this.telefoneTextBox.Location = new System.Drawing.Point(386, 212);
             this.telefoneTextBox.Name = "telefoneTextBox";
             this.telefoneTextBox.Size = new System.Drawing.Size(100, 20);
-            this.telefoneTextBox.TabIndex = 3;
+            this.telefoneTextBox.TabIndex = 4;
             // 
             // cepTextBox
             // 
             this.cepTextBox.Location = new System.Drawing.Point(386, 238);
             this.cepTextBox.Name = "cepTextBox";
             this.cepTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cepTextBox.TabIndex = 4;
+            this.cepTextBox.TabIndex = 5;
             // 
             // cidadeTextBox
             // 
             this.cidadeTextBox.Location = new System.Drawing.Point(386, 264);
             this.cidadeTextBox.Name = "cidadeTextBox";
             this.cidadeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cidadeTextBox.TabIndex = 5;
+            this.cidadeTextBox.TabIndex = 6;
             // 
             // logradouroTextBox
             // 
             this.logradouroTextBox.Location = new System.Drawing.Point(386, 290);
             this.logradouroTextBox.Name = "logradouroTextBox";
             this.logradouroTextBox.Size = new System.Drawing.Size(100, 20);
-            this.logradouroTextBox.TabIndex = 6;
+            this.logradouroTextBox.TabIndex = 7;
             // 
             // nomeTextBox
             // 
             this.nomeTextBox.Location = new System.Drawing.Point(386, 108);
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nomeTextBox.TabIndex = 7;
+            this.nomeTextBox.TabIndex = 0;
             // 
             // cpfTextBox
             // 
             this.cpfTextBox.Location = new System.Drawing.Point(386, 134);
             this.cpfTextBox.Name = "cpfTextBox";
             this.cpfTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cpfTextBox.TabIndex = 8;
+            this.cpfTextBox.TabIndex = 1;
             // 
             // nomeLabelText
             // 
@@ -195,7 +195,7 @@
             this.recuperarClienteButton.Location = new System.Drawing.Point(525, 332);
             this.recuperarClienteButton.Name = "recuperarClienteButton";
             this.recuperarClienteButton.Size = new System.Drawing.Size(75, 23);
-            this.recuperarClienteButton.TabIndex = 17;
+            this.recuperarClienteButton.TabIndex = 9;
             this.recuperarClienteButton.Text = "Recuperar";
             this.recuperarClienteButton.UseVisualStyleBackColor = true;
             this.recuperarClienteButton.Click += new System.EventHandler(this.recuperarClienteButton_Click);
@@ -205,7 +205,7 @@
             this.apagarClienteButton.Location = new System.Drawing.Point(525, 368);
             this.apagarClienteButton.Name = "apagarClienteButton";
             this.apagarClienteButton.Size = new System.Drawing.Size(75, 23);
-            this.apagarClienteButton.TabIndex = 18;
+            this.apagarClienteButton.TabIndex = 11;
             this.apagarClienteButton.Text = "Apagar";
             this.apagarClienteButton.UseVisualStyleBackColor = true;
             this.apagarClienteButton.Click += new System.EventHandler(this.apagarClienteButton_Click);
@@ -215,7 +215,7 @@
             this.alterarClienteButton.Location = new System.Drawing.Point(336, 368);
             this.alterarClienteButton.Name = "alterarClienteButton";
             this.alterarClienteButton.Size = new System.Drawing.Size(75, 23);
-            this.alterarClienteButton.TabIndex = 19;
+            this.alterarClienteButton.TabIndex = 10;
             this.alterarClienteButton.Text = "Alterar";
             this.alterarClienteButton.UseVisualStyleBackColor = true;
             this.alterarClienteButton.Click += new System.EventHandler(this.alterarClienteButton_Click);
@@ -225,7 +225,7 @@
             this.RecuperarTodosButton.Location = new System.Drawing.Point(331, 426);
             this.RecuperarTodosButton.Name = "RecuperarTodosButton";
             this.RecuperarTodosButton.Size = new System.Drawing.Size(269, 23);
-            this.RecuperarTodosButton.TabIndex = 20;
+            this.RecuperarTodosButton.TabIndex = 13;
             this.RecuperarTodosButton.Text = "Recuperar Todos";
             this.RecuperarTodosButton.UseVisualStyleBackColor = true;
             this.RecuperarTodosButton.Click += new System.EventHandler(this.button1_Click);
@@ -235,7 +235,7 @@
             this.recuperarPorNomeButton.Location = new System.Drawing.Point(331, 397);
             this.recuperarPorNomeButton.Name = "recuperarPorNomeButton";
             this.recuperarPorNomeButton.Size = new System.Drawing.Size(269, 23);
-            this.recuperarPorNomeButton.TabIndex = 21;
+            this.recuperarPorNomeButton.TabIndex = 12;
             this.recuperarPorNomeButton.Text = "Recuperar por nome";
             this.recuperarPorNomeButton.UseVisualStyleBackColor = true;
             this.recuperarPorNomeButton.Click += new System.EventHandler(this.button2_Click);
@@ -268,7 +268,7 @@
             this.Controls.Add(this.rgTextBox);
             this.Controls.Add(this.adicionarClienteButton);
             this.Name = "ClienteView";
-            this.Text = "ClienteView";
+            this.Text = "2";
             this.ResumeLayout(false);
             this.PerformLayout();
 

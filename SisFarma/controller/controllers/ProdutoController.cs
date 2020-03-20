@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using SisFarma.model.classes;
 using SisFarma.model.DAO;
 
@@ -25,7 +26,32 @@ namespace SisFarma.controller.controllers
                     + exc.Message);
             }
         }
-
+        public Produto recuperarPorId(int id)
+        {
+            try
+            {
+                return produtoDAO.recuperarProdutoId(id);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao recuperar um pedido" + "\n"
+                    + exc.Message);
+                return null;
+            }
+        }
+        public Produto recuperarPorDescricao(string descricao)
+        {
+            try
+            {
+                return produtoDAO.recuperarPorDescricao(descricao);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Ocorreu um erro ao recuperar um pedido" + "\n"
+                    + exc.Message);
+                return null;
+            }
+        }
         public void alterarProduto(Produto produto)
         {
             try
@@ -50,6 +76,11 @@ namespace SisFarma.controller.controllers
                 Console.WriteLine("Ocorreu um erro ao deletar um produto" + "\n"
                     + exc.Message);
             }
+        }
+
+        public ArrayList recuperarTodos()
+        {
+            return produtoDAO.recuperarTodos();
         }
     }
 }

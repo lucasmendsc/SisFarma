@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using FireSharp.Config;
 using FireSharp.Interfaces;
 using FireSharp.Response;
@@ -31,7 +32,7 @@ namespace SisFarma.model.DAO
             }
         }
 
-        public Produto recuperarProduto(int id)
+        public Produto recuperarProdutoId(int id)
         {
             try
             {
@@ -44,6 +45,21 @@ namespace SisFarma.model.DAO
                     + exc.Message);
                 return null;
             }
+        }
+
+        public Produto recuperarPorDescricao(string descricao)
+        {
+            ArrayList produtos = this.recuperarTodos();
+
+            foreach (Produto prod in produtos)
+            {
+                if (prod.Descricao.Equals(descricao))
+                {
+                    return prod;
+                }
+            }
+
+            return null;
         }
 
         public void alterarProduto(Produto produto)
@@ -70,6 +86,32 @@ namespace SisFarma.model.DAO
                 Console.WriteLine("Ocorreu um erro ao deletar um produto" + "\n"
                     + exc.Message);
             }
+        } 
+
+        public ArrayList recuperarTodos()
+        {
+
+            int i = 0;
+            CurrentIdDAO currentId = new CurrentIdDAO();
+            int cont = currentId.recuperarId(2);
+            ArrayList produtos = new ArrayList();
+            while (true)
+            {
+
+                if (i >= cont - 1)
+                {
+                    break;
+                }
+
+                FirebaseResponse response = clientFireBase.Get("P" + i);
+                Produto prod = response.ResultAs<Produto>();
+
+                produtos.Add(prod);
+
+                i++;
+            }
+
+            return produtos;
         }
     }
 }

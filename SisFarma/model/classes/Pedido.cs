@@ -15,6 +15,11 @@ namespace SisFarma.model.classes
         private double valorTotal;
         private string status;
 
+        public Pedido()
+        {
+
+        }
+
         public int Id {
             get { return id; }
             set { this.id = value; }
