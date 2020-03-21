@@ -89,12 +89,20 @@ namespace SisFarma.model.DAO
                     break;
                 }
 
-                FirebaseResponse response = clientFireBase.Get("P" + i);
-                Produto prod = response.ResultAs<Produto>();
-
-                produtos.Add(prod);
-
-                i++;
+                try
+                {
+                    FirebaseResponse response = clientFireBase.Get("P" + i);
+                    produtos.Add(response.ResultAs<Produto>());
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+                finally
+                {
+                    i++;
+                }
+               
             }
 
             return produtos;

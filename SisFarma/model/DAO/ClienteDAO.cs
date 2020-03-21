@@ -93,14 +93,24 @@ namespace SisFarma.model.DAO
                 {
                     break;
                 }
+
+                try
+                {
+                    FirebaseResponse response = clientFireBase.Get("C" + i);
+                    clientes.Add(response.ResultAs<Cliente>());
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+                finally
+                {
+                    i++;
+                }
                 
-                FirebaseResponse response = clientFireBase.Get("C" + (i -1));
-                Cliente cli = response.ResultAs<Cliente>();
-                clientes.Add(cli);
-                i++;
             }
 
-                return clientes;
+            return clientes;
         }
 
         public Cliente recuperarPorNome(string nome)

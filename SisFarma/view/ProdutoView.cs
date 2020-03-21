@@ -2,6 +2,7 @@
 using SisFarma.model.classes;
 using SisFarma.model.DAO;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace SisFarma.view
@@ -10,13 +11,37 @@ namespace SisFarma.view
     {
         private ProdutoController pController;
         private CurrentIdController current;
+        private DataTable dt;
         public ProdutoView()
         {
             pController = new ProdutoController();
             current = new CurrentIdController();
+            this.dt = new DataTable();
             InitializeComponent();
+            this.inicializarDataTable();
         }
 
+        private void inicializarDataTable()
+        {
+            dt.Columns.Add("Descrição");
+            dt.Columns.Add("Preço");
+
+            dataGridView1.DataSource = dt;
+            this.inicializarRows();
+
+        }
+
+        private void inicializarRows()
+        {
+            foreach (Produto p in pController.recuperarTodos())
+            {
+                DataRow row = dt.NewRow();
+                row["Descrição"] = p.Descricao;
+                row["Preço"] = p.Valor;
+
+                dt.Rows.Add(row);
+            }
+        }
         private void adicionarProdutoButton_Click(object sender, EventArgs e)
         {
             try

@@ -95,6 +95,12 @@
     <Compile Include="view\PedidoView.Designer.cs">
       <DependentUpon>PedidoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\ProdutoMainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ProdutoMainView.Designer.cs">
+      <DependentUpon>ProdutoMainView.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\ProdutoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\PedidoView.resx">
       <DependentUpon>PedidoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\ProdutoMainView.resx">
+      <DependentUpon>ProdutoMainView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\ProdutoView.resx">
       <DependentUpon>ProdutoView.cs</DependentUpon>

@@ -104,12 +104,20 @@ namespace SisFarma.model.DAO
                     break;
                 }
 
-                FirebaseResponse response = clientFireBase.Get("U" + i );
-                Usuario user = response.ResultAs<Usuario>();
-
-                usuarios.Add(user);
-
-                i++;
+                try
+                {
+                    FirebaseResponse response = clientFireBase.Get("U" + i);
+                    usuarios.Add(response.ResultAs<Usuario>());
+                }
+                catch (Exception)
+                {
+                    continue;
+                }
+                finally
+                {
+                    i++;
+                }
+                
             }
 
             return usuarios;
