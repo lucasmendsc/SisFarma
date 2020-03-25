@@ -110,7 +110,6 @@
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(100, 20);
             this.nomeTextBox.TabIndex = 0;
-            // 
             // cpfTextBox
             // 
             this.cpfTextBox.Location = new System.Drawing.Point(386, 134);

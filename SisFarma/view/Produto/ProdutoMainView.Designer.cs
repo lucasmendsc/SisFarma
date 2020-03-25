@@ -33,11 +33,8 @@
             this.deletarProdutoButton = new System.Windows.Forms.Button();
             this.recuperarPorDescButton = new System.Windows.Forms.Button();
             this.recuperarProdutoButton = new System.Windows.Forms.Button();
-            this.descricaoTextBox = new System.Windows.Forms.TextBox();
-            this.descricaoLabel = new System.Windows.Forms.Label();
-            this.precoLabel = new System.Windows.Forms.Label();
-            this.precoTextBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.recuperarPorDescricaoTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +70,7 @@
             // 
             // recuperarPorDescButton
             // 
-            this.recuperarPorDescButton.Location = new System.Drawing.Point(12, 192);
+            this.recuperarPorDescButton.Location = new System.Drawing.Point(593, 24);
             this.recuperarPorDescButton.Name = "recuperarPorDescButton";
             this.recuperarPorDescButton.Size = new System.Drawing.Size(195, 23);
             this.recuperarPorDescButton.TabIndex = 7;
@@ -90,60 +87,32 @@
             this.recuperarProdutoButton.Text = "Recuperar";
             this.recuperarProdutoButton.UseVisualStyleBackColor = true;
             // 
-            // descricaoTextBox
-            // 
-            this.descricaoTextBox.Location = new System.Drawing.Point(79, 26);
-            this.descricaoTextBox.Name = "descricaoTextBox";
-            this.descricaoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.descricaoTextBox.TabIndex = 0;
-            // 
-            // descricaoLabel
-            // 
-            this.descricaoLabel.AutoSize = true;
-            this.descricaoLabel.Location = new System.Drawing.Point(12, 26);
-            this.descricaoLabel.Name = "descricaoLabel";
-            this.descricaoLabel.Size = new System.Drawing.Size(64, 13);
-            this.descricaoLabel.TabIndex = 4;
-            this.descricaoLabel.Text = "Descrição : ";
-            // 
-            // precoLabel
-            // 
-            this.precoLabel.AutoSize = true;
-            this.precoLabel.Location = new System.Drawing.Point(35, 52);
-            this.precoLabel.Name = "precoLabel";
-            this.precoLabel.Size = new System.Drawing.Size(41, 13);
-            this.precoLabel.TabIndex = 3;
-            this.precoLabel.Text = "Preço :";
-            // 
-            // precoTextBox
-            // 
-            this.precoTextBox.Location = new System.Drawing.Point(79, 52);
-            this.precoTextBox.Name = "precoTextBox";
-            this.precoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.precoTextBox.TabIndex = 1;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(229, 12);
+            this.dataGridView1.Location = new System.Drawing.Point(229, 52);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(559, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(559, 386);
             this.dataGridView1.TabIndex = 8;
+            // 
+            // recuperarPorDescricaoTextBox
+            // 
+            this.recuperarPorDescricaoTextBox.Location = new System.Drawing.Point(229, 26);
+            this.recuperarPorDescricaoTextBox.Name = "recuperarPorDescricaoTextBox";
+            this.recuperarPorDescricaoTextBox.Size = new System.Drawing.Size(358, 20);
+            this.recuperarPorDescricaoTextBox.TabIndex = 9;
             // 
             // ProdutoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.recuperarPorDescricaoTextBox);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.recuperarPorDescButton);
             this.Controls.Add(this.deletarProdutoButton);
             this.Controls.Add(this.alterarProdutoButton);
             this.Controls.Add(this.recuperarProdutoButton);
-            this.Controls.Add(this.descricaoLabel);
-            this.Controls.Add(this.precoLabel);
-            this.Controls.Add(this.precoTextBox);
-            this.Controls.Add(this.descricaoTextBox);
             this.Controls.Add(this.adicionarProdutoButton);
             this.Name = "ProdutoView";
             this.Text = "ProdutoView";
@@ -160,10 +129,7 @@
         private System.Windows.Forms.Button deletarProdutoButton;
         private System.Windows.Forms.Button recuperarPorDescButton;
         private System.Windows.Forms.Button recuperarProdutoButton;
-        private System.Windows.Forms.TextBox descricaoTextBox;
-        private System.Windows.Forms.Label descricaoLabel;
-        private System.Windows.Forms.Label precoLabel;
-        private System.Windows.Forms.TextBox precoTextBox;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox recuperarPorDescricaoTextBox;
     }
 }

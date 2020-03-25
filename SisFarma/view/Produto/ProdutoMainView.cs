@@ -28,7 +28,6 @@ namespace SisFarma.view
 
             dataGridView1.DataSource = dt;
             this.inicializarRows();
-
         }
 
         private void inicializarRows()
@@ -42,29 +41,14 @@ namespace SisFarma.view
                 dt.Rows.Add(row);
             }
         }
-        private void adicionarProdutoButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                current.atualizarId(2);
-                Produto produtoAdicionado = new Produto(current.recuperarId(2), descricaoTextBox.Text, 2.5, "");
-                pController.adicionarProduto(produtoAdicionado);
-
-                MessageBox.Show("Produto cadastrado com sucesso!");
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ocorreu um erro ao cadastar o produto ");
-            }
-        }
 
         private void recuperarPorDescButton_Click(object sender, EventArgs e)
         {
             try
             {
-                Produto produto = pController.recuperarPorDescricao(descricaoTextBox.Text);
-                MessageBox.Show(produto.Id + "");
+                Produto produto = pController.recuperarPorDescricao
+                                        (recuperarPorDescricaoTextBox.Text);
+                MessageBox.Show(produto.Descricao);
 
             }
             catch (Exception)
@@ -77,7 +61,7 @@ namespace SisFarma.view
         {
             try
             {
-                Produto produtoAdicionado = new Produto(4, descricaoTextBox.Text, 6.5, "222");
+                Produto produtoAdicionado = new Produto(4, "asd", 6.5, "222");
                 pController.alterarProduto(produtoAdicionado);
 
                 MessageBox.Show("Produto alterado com sucesso!");
@@ -93,7 +77,7 @@ namespace SisFarma.view
         {
             try
             {
-                Produto produtoAdicionado = new Produto(1, descricaoTextBox.Text, 2.5, "");
+                Produto produtoAdicionado = new Produto(1," asd", 2.5, "");
                 pController.deletarProduto(produtoAdicionado);
                 current.atualizarIdsDeletados(2);
                 MessageBox.Show("Produto deletado com sucesso!");
@@ -105,12 +89,9 @@ namespace SisFarma.view
             }
         }
 
-        private void recuperarTodosButton_Click(object sender, EventArgs e)
+        private void adicionarProdutoButton_Click(object sender, EventArgs e)
         {
-            foreach(Produto p in pController.recuperarTodos())
-            {
-                MessageBox.Show(p.Descricao);
-            }
+            new AdicionarProdutoView().Show();
         }
     }
 }
