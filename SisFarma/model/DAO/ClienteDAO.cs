@@ -23,7 +23,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                SetResponse response = await clientFireBase.SetTaskAsync("C" + cliente.Id, cliente);
+                SetResponse response = await clientFireBase.SetTaskAsync("C000" + cliente.Id, cliente);
 
             }
             catch (Exception exc)

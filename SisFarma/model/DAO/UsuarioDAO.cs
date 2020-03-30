@@ -37,7 +37,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                FirebaseResponse response = clientFireBase.Get("U" + id);
+                FirebaseResponse response = clientFireBase.Get("U000" + id);
                 return response.ResultAs<Usuario>();
             }
             catch (Exception exc)

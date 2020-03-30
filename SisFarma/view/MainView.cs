@@ -17,20 +17,28 @@ namespace SisFarma.view
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AdicionarProdutoView().Show();
+        }
+
+        private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ProdutoView().Show();
+        }
+
+        private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new ClienteView().Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            new ProdutoView().Show();
-            
+            new AdicionarProdutoView().Show();
         }
 
-        private void usuarioViewButton_Click(object sender, EventArgs e)
+        private void visualizarUsuarioToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            new UsuarioVIew().Show();
         }
     }
 }
