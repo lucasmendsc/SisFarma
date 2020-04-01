@@ -38,20 +38,25 @@
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarUsuarioMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarUsuarioMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarPedidoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visualizarPedidosMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Info;
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.produtosToolStripMenuItem,
             this.clientesToolStripMenuItem,
-            this.usuáriosToolStripMenuItem});
+            this.usuáriosToolStripMenuItem,
+            this.pedidoMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 29);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -61,11 +66,12 @@
             this.cadastrarProdutoMenu,
             this.visualizarProdutoMenu});
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
-            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.produtosToolStripMenuItem.Size = new System.Drawing.Size(91, 25);
             this.produtosToolStripMenuItem.Text = "Produtos";
             // 
             // cadastrarProdutoMenu
             // 
+            this.cadastrarProdutoMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarProdutoMenu.Name = "cadastrarProdutoMenu";
             this.cadastrarProdutoMenu.Size = new System.Drawing.Size(180, 22);
             this.cadastrarProdutoMenu.Text = "Cadastrar";
@@ -73,6 +79,7 @@
             // 
             // visualizarProdutoMenu
             // 
+            this.visualizarProdutoMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.visualizarProdutoMenu.Name = "visualizarProdutoMenu";
             this.visualizarProdutoMenu.Size = new System.Drawing.Size(180, 22);
             this.visualizarProdutoMenu.Text = "Visualizar";
@@ -84,11 +91,12 @@
             this.cadastrarClienteMenu,
             this.visualizarClienteMenu});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(83, 25);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // cadastrarClienteMenu
             // 
+            this.cadastrarClienteMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarClienteMenu.Name = "cadastrarClienteMenu";
             this.cadastrarClienteMenu.Size = new System.Drawing.Size(180, 22);
             this.cadastrarClienteMenu.Text = "Cadastrar";
@@ -96,6 +104,7 @@
             // 
             // visualizarClienteMenu
             // 
+            this.visualizarClienteMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.visualizarClienteMenu.Name = "visualizarClienteMenu";
             this.visualizarClienteMenu.Size = new System.Drawing.Size(180, 22);
             this.visualizarClienteMenu.Text = "Visualizar";
@@ -106,11 +115,12 @@
             this.cadastrarUsuarioMenu,
             this.visualizarUsuarioMenu});
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(88, 25);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             // 
             // cadastrarUsuarioMenu
             // 
+            this.cadastrarUsuarioMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarUsuarioMenu.Name = "cadastrarUsuarioMenu";
             this.cadastrarUsuarioMenu.Size = new System.Drawing.Size(180, 22);
             this.cadastrarUsuarioMenu.Text = "Cadastrar";
@@ -118,10 +128,35 @@
             // 
             // visualizarUsuarioMenu
             // 
+            this.visualizarUsuarioMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.visualizarUsuarioMenu.Name = "visualizarUsuarioMenu";
             this.visualizarUsuarioMenu.Size = new System.Drawing.Size(180, 22);
             this.visualizarUsuarioMenu.Text = "Visualizar";
             this.visualizarUsuarioMenu.Click += new System.EventHandler(this.visualizarUsuarioToolStripMenuItem2_Click);
+            // 
+            // pedidoMenuItem
+            // 
+            this.pedidoMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarPedidoMenuItem,
+            this.visualizarPedidosMenuItem});
+            this.pedidoMenuItem.Name = "pedidoMenuItem";
+            this.pedidoMenuItem.Size = new System.Drawing.Size(83, 25);
+            this.pedidoMenuItem.Text = "Pedidos";
+            // 
+            // cadastrarPedidoMenuItem
+            // 
+            this.cadastrarPedidoMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cadastrarPedidoMenuItem.Name = "cadastrarPedidoMenuItem";
+            this.cadastrarPedidoMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarPedidoMenuItem.Text = "Cadastrar";
+            this.cadastrarPedidoMenuItem.Click += new System.EventHandler(this.cadastrarPedidoMenuItem_Click);
+            // 
+            // visualizarPedidosMenuItem
+            // 
+            this.visualizarPedidosMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.visualizarPedidosMenuItem.Name = "visualizarPedidosMenuItem";
+            this.visualizarPedidosMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.visualizarPedidosMenuItem.Text = "Visualizar";
             // 
             // MainView
             // 
@@ -150,5 +185,8 @@
         private System.Windows.Forms.ToolStripMenuItem visualizarClienteMenu;
         private System.Windows.Forms.ToolStripMenuItem cadastrarUsuarioMenu;
         private System.Windows.Forms.ToolStripMenuItem visualizarUsuarioMenu;
+        private System.Windows.Forms.ToolStripMenuItem pedidoMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarPedidoMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visualizarPedidosMenuItem;
     }
 }

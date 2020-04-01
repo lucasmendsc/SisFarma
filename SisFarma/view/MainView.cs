@@ -40,5 +40,10 @@ namespace SisFarma.view
         private void visualizarUsuarioToolStripMenuItem2_Click(object sender, EventArgs e)
         {
         }
+
+        private void cadastrarPedidoMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
