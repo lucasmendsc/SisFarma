@@ -72,17 +72,23 @@
     <Compile Include="model\DAO\ProdutoDAO.cs" />
     <Compile Include="model\DAO\UsuarioDAO.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="view\Produto\AdicionarProdutoView.cs">
+    <Compile Include="view\ClienteView\AdicionarClienteView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Produto\AdicionarProdutoView.Designer.cs">
+    <Compile Include="view\ClienteView\AdicionarClienteView.Designer.cs">
+      <DependentUpon>AdicionarClienteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ClienteView\VisualizarClienteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ClienteView\VisualizarClienteView.Designer.cs">
+      <DependentUpon>VisualizarClienteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ProdutoView\AdicionarProdutoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ProdutoView\AdicionarProdutoView.Designer.cs">
       <DependentUpon>AdicionarProdutoView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="view\Cliente\ClienteMainView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\Cliente\ClienteMainView.Designer.cs">
-      <DependentUpon>ClienteMainView.cs</DependentUpon>
     </Compile>
     <Compile Include="model\classes\Cliente.cs" />
     <Compile Include="model\classes\ItemPedido.cs" />
@@ -96,22 +102,22 @@
     <Compile Include="view\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Pedido\PedidoMainView.cs">
+    <Compile Include="view\PedidoView\PedidoMainView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Pedido\PedidoMainView.Designer.cs">
+    <Compile Include="view\PedidoView\PedidoMainView.Designer.cs">
       <DependentUpon>PedidoMainView.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Produto\ProdutoMainView.cs">
+    <Compile Include="view\ProdutoView\VisualizarProdutoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Produto\ProdutoMainView.Designer.cs">
-      <DependentUpon>ProdutoMainView.cs</DependentUpon>
+    <Compile Include="view\ProdutoView\VisualizarProdutoView.Designer.cs">
+      <DependentUpon>VisualizarProdutoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\Usuario\UsuarioMainView.cs">
+    <Compile Include="view\UsuarioView\UsuarioMainView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\Usuario\UsuarioMainView.Designer.cs">
+    <Compile Include="view\UsuarioView\UsuarioMainView.Designer.cs">
       <DependentUpon>UsuarioMainView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -123,22 +129,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="view\Produto\AdicionarProdutoView.resx">
-      <DependentUpon>AdicionarProdutoView.cs</DependentUpon>
+    <EmbeddedResource Include="view\ClienteView\AdicionarClienteView.resx">
+      <DependentUpon>AdicionarClienteView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Cliente\ClienteMainView.resx">
-      <DependentUpon>ClienteMainView.cs</DependentUpon>
+    <EmbeddedResource Include="view\ClienteView\VisualizarClienteView.resx">
+      <DependentUpon>VisualizarClienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\ProdutoView\AdicionarProdutoView.resx">
+      <DependentUpon>AdicionarProdutoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Pedido\PedidoMainView.resx">
+    <EmbeddedResource Include="view\PedidoView\PedidoMainView.resx">
       <DependentUpon>PedidoMainView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Produto\ProdutoMainView.resx">
-      <DependentUpon>ProdutoMainView.cs</DependentUpon>
+    <EmbeddedResource Include="view\ProdutoView\VisualizarProdutoView.resx">
+      <DependentUpon>VisualizarProdutoView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\Usuario\UsuarioMainView.resx">
+    <EmbeddedResource Include="view\UsuarioView\UsuarioMainView.resx">
       <DependentUpon>UsuarioMainView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="controller\resources\json.csproj" />

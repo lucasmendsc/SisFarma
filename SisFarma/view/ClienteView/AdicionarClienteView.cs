@@ -1,16 +1,22 @@
 ﻿using SisFarma.controller.controllers;
 using SisFarma.model.classes;
-using SisFarma.model.DAO;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SisFarma.view
+namespace SisFarma.view.ClienteView
 {
-    public partial class ClienteView : Form
+    public partial class AdicionarClienteView : Form
     {
         private ClienteController clienteController;
         private CurrentIdController current;
-        public ClienteView()
+        public AdicionarClienteView()
         {
             clienteController = new ClienteController();
             current = new CurrentIdController();
@@ -19,21 +25,7 @@ namespace SisFarma.view
 
         private void adicionarClienteButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                current.atualizarId(1);
-                clienteController.adicionarCliente(
-                    new Cliente(current.recuperarId(1), logradouroTextBox.Text,
-                        cidadeTextBox.Text, cepTextBox.Text, DateTime.Now, telefoneTextBox.Text,
-                        sexoTextBox.Text, rgTextBox.Text, nomeTextBox.Text, cpfTextBox.Text, 5));
-
-                MessageBox.Show("Cliente cadastrado com sucesso!");
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ocorreu um erro ao cadastrar o cliente.");
-            }               
-            
+           
         }
 
         private void recuperarClienteButton_Click(object sender, EventArgs e)
@@ -80,7 +72,7 @@ namespace SisFarma.view
 
         private void button1_Click(object sender, EventArgs e)
         {
-            foreach(Cliente cli in clienteController.recuperarTodos())
+            foreach (Cliente cli in clienteController.recuperarTodos())
             {
                 MessageBox.Show(cli.Nome);
             }
@@ -88,8 +80,7 @@ namespace SisFarma.view
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Cliente cli = clienteController.recuperarPorNome(nomeTextBox.Text);
-            MessageBox.Show("" + cli.Id);
+
         }
     }
 }

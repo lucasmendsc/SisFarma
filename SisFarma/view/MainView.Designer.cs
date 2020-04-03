@@ -108,6 +108,7 @@
             this.visualizarClienteMenu.Name = "visualizarClienteMenu";
             this.visualizarClienteMenu.Size = new System.Drawing.Size(180, 22);
             this.visualizarClienteMenu.Text = "Visualizar";
+            this.visualizarClienteMenu.Click += new System.EventHandler(this.visualizarClienteMenu_Click);
             // 
             // usuáriosToolStripMenuItem
             // 
@@ -122,7 +123,7 @@
             // 
             this.cadastrarUsuarioMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarUsuarioMenu.Name = "cadastrarUsuarioMenu";
-            this.cadastrarUsuarioMenu.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarUsuarioMenu.Size = new System.Drawing.Size(135, 22);
             this.cadastrarUsuarioMenu.Text = "Cadastrar";
             this.cadastrarUsuarioMenu.Click += new System.EventHandler(this.cadastrarToolStripMenuItem2_Click);
             // 
@@ -130,7 +131,7 @@
             // 
             this.visualizarUsuarioMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.visualizarUsuarioMenu.Name = "visualizarUsuarioMenu";
-            this.visualizarUsuarioMenu.Size = new System.Drawing.Size(180, 22);
+            this.visualizarUsuarioMenu.Size = new System.Drawing.Size(135, 22);
             this.visualizarUsuarioMenu.Text = "Visualizar";
             this.visualizarUsuarioMenu.Click += new System.EventHandler(this.visualizarUsuarioToolStripMenuItem2_Click);
             // 
@@ -147,7 +148,7 @@
             // 
             this.cadastrarPedidoMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarPedidoMenuItem.Name = "cadastrarPedidoMenuItem";
-            this.cadastrarPedidoMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarPedidoMenuItem.Size = new System.Drawing.Size(135, 22);
             this.cadastrarPedidoMenuItem.Text = "Cadastrar";
             this.cadastrarPedidoMenuItem.Click += new System.EventHandler(this.cadastrarPedidoMenuItem_Click);
             // 
@@ -155,7 +156,7 @@
             // 
             this.visualizarPedidosMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.visualizarPedidosMenuItem.Name = "visualizarPedidosMenuItem";
-            this.visualizarPedidosMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.visualizarPedidosMenuItem.Size = new System.Drawing.Size(135, 22);
             this.visualizarPedidosMenuItem.Text = "Visualizar";
             // 
             // MainView
