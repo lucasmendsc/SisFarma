@@ -20,12 +20,12 @@ namespace SisFarma.view
         {
             try
             {
-                current.atualizarId(2);
+                
                 pController.adicionarProduto(
                     new Produto
-                            (current.recuperarId(2), descricaoTextBox.Text, 
+                            (current.recuperarId(2) + 1, descricaoTextBox.Text, 
                                 Convert.ToDouble(valorTextBox.Text), ""));
-
+                current.atualizarId(2);
                 MessageBox.Show("Produto cadastrado com sucesso!");
             }
             catch (Exception)

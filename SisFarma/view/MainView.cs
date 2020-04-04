@@ -40,18 +40,18 @@ namespace SisFarma.view
 
         private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            new AdicionarProdutoView().Show();
+            new UsuarioView.AdicionarUsuarioView().Show();
         }
 
         private void visualizarUsuarioToolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            new UsuarioView.VisualizarUsuarioView().Show();
         }
 
         private void cadastrarPedidoMenuItem_Click(object sender, EventArgs e)
         {
 
         }
-
 
     }
 }

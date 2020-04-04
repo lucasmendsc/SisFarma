@@ -20,14 +20,14 @@ namespace SisFarma.view.ClienteView
         {
             try
             {
-                current.atualizarId(1);
+                
                 clienteController.adicionarCliente
                     (new Cliente
-                        (current.recuperarId(1),nomeTextBox.Text,cpfTextBox.Text,
+                        (current.recuperarId(1) + 1,nomeTextBox.Text,cpfTextBox.Text,
                         rgTextBox.Text,dateTimePicker1.Value,sexoTextBox.Text,
                         telefoneTextBox.Text,cepTextBox.Text,cidadeTextBox.Text,
                         logradouroTextBox.Text,Convert.ToInt32(numeroTextBox.Text)));
-
+                current.atualizarId(1);
                 MessageBox.Show("Cliente adicionado com sucesso!");
             }
             catch (Exception)

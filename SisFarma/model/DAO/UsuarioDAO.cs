@@ -24,7 +24,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                SetResponse response = await clientFireBase.SetTaskAsync("U" + usuario.Id, usuario);
+                SetResponse response = await clientFireBase.SetTaskAsync("U000" + usuario.Id, usuario);
             }
             catch (Exception exc)
             {
