@@ -101,7 +101,7 @@
             this.Controls.Add(this.voltarButton);
             this.Controls.Add(this.adicionarButton);
             this.Name = "AdicionarProdutoView";
-            this.Text = "AdicionarProdutoView";
+            this.Text = "Adicionar Produto";
             this.ResumeLayout(false);
             this.PerformLayout();
 

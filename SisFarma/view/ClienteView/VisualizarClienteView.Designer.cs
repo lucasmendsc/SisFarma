@@ -68,7 +68,7 @@
             this.Controls.Add(this.recuperarClienteTextBox);
             this.Controls.Add(this.dataGridView1);
             this.Name = "VisualizarClienteView";
-            this.Text = "VisualizarClienteView";
+            this.Text = "Visualizar Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

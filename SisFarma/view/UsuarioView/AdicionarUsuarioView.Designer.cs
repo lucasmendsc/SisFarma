@@ -140,7 +140,7 @@
             this.Controls.Add(this.loginTextBox);
             this.Controls.Add(this.senhaTextBox);
             this.Name = "AdicionarUsuarioView";
-            this.Text = "AdicionarUsuarioView";
+            this.Text = "Adicionar Usuario";
             this.ResumeLayout(false);
             this.PerformLayout();
 

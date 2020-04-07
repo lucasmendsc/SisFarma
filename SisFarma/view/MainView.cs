@@ -1,12 +1,5 @@
 ﻿using SisFarma.view.ClienteView;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SisFarma.view
@@ -30,12 +23,12 @@ namespace SisFarma.view
 
         private void cadastrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new view.ClienteView.AdicionarClienteView().Show();
+            new AdicionarClienteView().Show();
         }
 
         private void visualizarClienteMenu_Click(object sender, EventArgs e)
         {
-            new view.ClienteView.VisualizarClienteView().Show();
+            new VisualizarClienteView().Show();
         }
 
         private void cadastrarToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -50,8 +43,12 @@ namespace SisFarma.view
 
         private void cadastrarPedidoMenuItem_Click(object sender, EventArgs e)
         {
-
+            new PedidoView.AdicionarPedidoView().Show();
         }
 
+        private void visualizarPedidosMenuItem_Click(object sender, EventArgs e)
+        {
+            new PedidoView.VisualizarPedidoView().Show();
+        }
     }
 }

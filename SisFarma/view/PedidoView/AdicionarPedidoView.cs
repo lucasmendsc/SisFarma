@@ -1,18 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SisFarma.view
+namespace SisFarma.view.PedidoView
 {
-    public partial class PedidoView : Form
+    public partial class AdicionarPedidoView : Form
     {
-        public PedidoView()
+        public AdicionarPedidoView()
         {
             InitializeComponent();
-        }
-
-        private void adicionarClienteButton_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace SisFarma.model.classes
 {
@@ -11,14 +10,14 @@ namespace SisFarma.model.classes
         private ArrayList itensPedido;
         private int codCliente;
         private double valorTotal;
-        private string status;
+        private int status;
 
         public Pedido()
         {
 
         }
         public Pedido(int id,DateTime dataPedido,ArrayList itensPedido,
-            int codCliente, double valorTotal,string status)
+            int codCliente, double valorTotal,int status)
         {
             this.id = id;
             this.dataPedido = dataPedido;
@@ -57,7 +56,7 @@ namespace SisFarma.model.classes
             set { this.valorTotal = value; }
         }
 
-        public string Status
+        public int Status
         {
             get { return status; }
             set { this.status = value; }

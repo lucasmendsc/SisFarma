@@ -84,6 +84,18 @@
     <Compile Include="view\ClienteView\VisualizarClienteView.Designer.cs">
       <DependentUpon>VisualizarClienteView.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\PedidoView\AdicionarPedidoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\PedidoView\AdicionarPedidoView.Designer.cs">
+      <DependentUpon>AdicionarPedidoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\PedidoView\VisualizarPedidoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\PedidoView\VisualizarPedidoView.Designer.cs">
+      <DependentUpon>VisualizarPedidoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\ProdutoView\AdicionarProdutoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +113,6 @@
     </Compile>
     <Compile Include="view\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="view\PedidoView\AdicionarPedidoView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="view\PedidoView\AdicionarPedidoView.Designer.cs">
-      <DependentUpon>AdicionarPedidoView.cs</DependentUpon>
     </Compile>
     <Compile Include="view\ProdutoView\VisualizarProdutoView.cs">
       <SubType>Form</SubType>
@@ -141,14 +147,17 @@
     <EmbeddedResource Include="view\ClienteView\VisualizarClienteView.resx">
       <DependentUpon>VisualizarClienteView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\PedidoView\AdicionarPedidoView.resx">
+      <DependentUpon>AdicionarPedidoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\PedidoView\VisualizarPedidoView.resx">
+      <DependentUpon>VisualizarPedidoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\ProdutoView\AdicionarProdutoView.resx">
       <DependentUpon>AdicionarProdutoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="view\PedidoView\AdicionarPedidoView.resx">
-      <DependentUpon>AdicionarPedidoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\ProdutoView\VisualizarProdutoView.resx">
       <DependentUpon>VisualizarProdutoView.cs</DependentUpon>

@@ -59,7 +59,7 @@
             this.recuperarButton.UseVisualStyleBackColor = true;
             this.recuperarButton.Click += new System.EventHandler(this.recuperarButton_Click);
             // 
-            // VisualizarUsuario
+            // VisualizarUsuarioView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -67,8 +67,8 @@
             this.Controls.Add(this.recuperarButton);
             this.Controls.Add(this.recuperarTextBox);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "VisualizarUsuario";
-            this.Text = "VisualizarUsuario";
+            this.Name = "VisualizarUsuarioView";
+            this.Text = "Visualizar Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

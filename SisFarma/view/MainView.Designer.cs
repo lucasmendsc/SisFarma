@@ -98,7 +98,7 @@
             // 
             this.cadastrarClienteMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarClienteMenu.Name = "cadastrarClienteMenu";
-            this.cadastrarClienteMenu.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarClienteMenu.Size = new System.Drawing.Size(135, 22);
             this.cadastrarClienteMenu.Text = "Cadastrar";
             this.cadastrarClienteMenu.Click += new System.EventHandler(this.cadastrarToolStripMenuItem1_Click);
             // 
@@ -106,7 +106,7 @@
             // 
             this.visualizarClienteMenu.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.visualizarClienteMenu.Name = "visualizarClienteMenu";
-            this.visualizarClienteMenu.Size = new System.Drawing.Size(180, 22);
+            this.visualizarClienteMenu.Size = new System.Drawing.Size(135, 22);
             this.visualizarClienteMenu.Text = "Visualizar";
             this.visualizarClienteMenu.Click += new System.EventHandler(this.visualizarClienteMenu_Click);
             // 
@@ -148,7 +148,7 @@
             // 
             this.cadastrarPedidoMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadastrarPedidoMenuItem.Name = "cadastrarPedidoMenuItem";
-            this.cadastrarPedidoMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.cadastrarPedidoMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarPedidoMenuItem.Text = "Cadastrar";
             this.cadastrarPedidoMenuItem.Click += new System.EventHandler(this.cadastrarPedidoMenuItem_Click);
             // 
@@ -156,8 +156,9 @@
             // 
             this.visualizarPedidosMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.visualizarPedidosMenuItem.Name = "visualizarPedidosMenuItem";
-            this.visualizarPedidosMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.visualizarPedidosMenuItem.Size = new System.Drawing.Size(180, 22);
             this.visualizarPedidosMenuItem.Text = "Visualizar";
+            this.visualizarPedidosMenuItem.Click += new System.EventHandler(this.visualizarPedidosMenuItem_Click);
             // 
             // MainView
             // 
@@ -167,7 +168,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainView";
-            this.Text = "MainView";
+            this.Text = "Farma Vitoria";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -1,6 +1,6 @@
-﻿namespace SisFarma.view
+﻿namespace SisFarma.view.PedidoView
 {
-    partial class PedidoView
+    partial class AdicionarPedidoView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.adicionarClienteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // adicionarClienteButton
-            // 
-            this.adicionarClienteButton.Location = new System.Drawing.Point(159, 314);
-            this.adicionarClienteButton.Name = "adicionarClienteButton";
-            this.adicionarClienteButton.Size = new System.Drawing.Size(184, 23);
-            this.adicionarClienteButton.TabIndex = 0;
-            this.adicionarClienteButton.Text = "Adicionar Cliente";
-            this.adicionarClienteButton.UseVisualStyleBackColor = true;
-            this.adicionarClienteButton.Click += new System.EventHandler(this.adicionarClienteButton_Click);
-            // 
-            // PedidoView
+            // AdicionarPedidoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.adicionarClienteButton);
-            this.Name = "PedidoView";
-            this.Text = "PedidoView";
+            this.Name = "AdicionarPedidoView";
+            this.Text = "Adicionar Pedido";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button adicionarClienteButton;
     }
 }

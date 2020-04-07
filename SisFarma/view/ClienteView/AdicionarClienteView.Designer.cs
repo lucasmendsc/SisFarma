@@ -265,7 +265,7 @@
             this.Controls.Add(this.voltarButton);
             this.Controls.Add(this.adicionarClienteButton);
             this.Name = "AdicionarClienteView";
-            this.Text = "AdicionarClienteView";
+            this.Text = "Adicionar Cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

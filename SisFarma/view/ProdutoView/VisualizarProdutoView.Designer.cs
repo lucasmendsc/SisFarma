@@ -115,7 +115,7 @@
             this.Controls.Add(this.recuperarProdutoButton);
             this.Controls.Add(this.adicionarProdutoButton);
             this.Name = "ProdutoView";
-            this.Text = "ProdutoView";
+            this.Text = "Visualizar Produtos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
