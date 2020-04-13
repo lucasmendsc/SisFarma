@@ -1,13 +1,8 @@
 ﻿using SisFarma.controller.controllers;
 using SisFarma.model.classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SisFarma.view.ClienteView
@@ -17,6 +12,7 @@ namespace SisFarma.view.ClienteView
         private ClienteController clienteController;
         private CurrentIdController current;
         private DataTable dt;
+        private int rowSelected;
         public VisualizarClienteView()
         {
             clienteController = new ClienteController();
@@ -64,6 +60,27 @@ namespace SisFarma.view.ClienteView
             catch (Exception)
             {
                 MessageBox.Show("Ocorreu um erro ao recuperar o produto por descrição.");
+            }
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                ContextMenu menu = new ContextMenu();
+                menu.MenuItems.Add(new MenuItem("Visualizar"));
+                menu.MenuItems.Add(new MenuItem("Alterar"));
+                menu.MenuItems.Add(new MenuItem("Deletar"));
+
+                rowSelected = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+
+                if (rowSelected >= 0)
+                {
+                    MessageBox.Show("Selecione uma linha!");
+                }
+
+                menu.Show(dataGridView1, new Point(e.X + 80, e.Y + 15));
+
             }
         }
     }
