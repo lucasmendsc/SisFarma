@@ -13,6 +13,7 @@ namespace SisFarma.view.ClienteView
         private CurrentIdController current;
         private DataTable dt;
         private int rowSelected;
+
         public VisualizarClienteView()
         {
             clienteController = new ClienteController();
@@ -23,7 +24,7 @@ namespace SisFarma.view.ClienteView
         }
 
         private void inicializarDataTable()
-        {
+        {         
             dt.Columns.Add("Nome");
             dt.Columns.Add("Telefone");
             dt.Columns.Add("Cidade");
@@ -67,10 +68,8 @@ namespace SisFarma.view.ClienteView
         {
             if (e.Button == MouseButtons.Right)
             {
-                ContextMenu menu = new ContextMenu();
-                menu.MenuItems.Add(new MenuItem("Visualizar"));
-                menu.MenuItems.Add(new MenuItem("Alterar"));
-                menu.MenuItems.Add(new MenuItem("Deletar"));
+
+                contextMenuStrip1.Show();
 
                 rowSelected = dataGridView1.HitTest(e.X, e.Y).RowIndex;
 
@@ -79,9 +78,12 @@ namespace SisFarma.view.ClienteView
                     MessageBox.Show("Selecione uma linha!");
                 }
 
-                menu.Show(dataGridView1, new Point(e.X + 80, e.Y + 15));
-
             }
+        }
+
+        private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
