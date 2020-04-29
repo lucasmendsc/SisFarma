@@ -14,8 +14,8 @@ namespace SisFarma.model.DAO
         public CurrentIdDAO()
         {
             config = new FirebaseConfig();
-            config.AuthSecret = "8q9WyVQfuvRecPJUNbYnl28QwNTosqxw1axFdWhu";
-            config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/";
+            config.AuthSecret = "pYwmmuPIh0qsYJWrTOR6Go40JGhbS94zdr8MrzFR";
+            config.BasePath = "https://appfarma-4fbcb.firebaseio.com/";
             clientFireBase = new FireSharp.FirebaseClient(config);
         }
         public async void atualizarId(int cod)

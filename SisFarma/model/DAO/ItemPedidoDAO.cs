@@ -14,8 +14,8 @@ namespace SisFarma.model.DAO
         public ItemPedidoDAO()
         {
             config = new FirebaseConfig();
-            config.AuthSecret = "8q9WyVQfuvRecPJUNbYnl28QwNTosqxw1axFdWhu";
-            config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/ItensPedidos/";
+            config.AuthSecret = "pYwmmuPIh0qsYJWrTOR6Go40JGhbS94zdr8MrzFR";
+            config.BasePath = "https://appfarma-4fbcb.firebaseio.com/ItensPedidos/";
             clientFireBase = new FireSharp.FirebaseClient(config);
         }
 

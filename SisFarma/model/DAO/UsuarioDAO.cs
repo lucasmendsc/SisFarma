@@ -15,8 +15,8 @@ namespace SisFarma.model.DAO
         public UsuarioDAO()
         {
             config = new FirebaseConfig();
-            config.AuthSecret = "8q9WyVQfuvRecPJUNbYnl28QwNTosqxw1axFdWhu";
-            config.BasePath = "https://sisfarmavitoria.firebaseio.com/SisFarma/Usuarios/";
+            config.AuthSecret = "pYwmmuPIh0qsYJWrTOR6Go40JGhbS94zdr8MrzFR";
+            config.BasePath = "https://appfarma-4fbcb.firebaseio.com/Usuarios/";
             clientFireBase = new FireSharp.FirebaseClient(config);
         }
 
@@ -106,7 +106,7 @@ namespace SisFarma.model.DAO
 
                 try
                 {
-                    FirebaseResponse response = clientFireBase.Get("U" + i);
+                    FirebaseResponse response = clientFireBase.Get("U000" + i);
                     usuarios.Add(response.ResultAs<Usuario>());
                 }
                 catch (Exception)
