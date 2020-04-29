@@ -48,7 +48,7 @@ namespace SisFarma.view
             try
             {
                 Produto produto = pController.recuperarPorDescricao
-                                        (recuperarPorDescricaoTextBox.Text);
+                                        (recuperarTextBox.Text);
                 MessageBox.Show(produto.Descricao);
 
             }
@@ -58,51 +58,10 @@ namespace SisFarma.view
             }
         }
 
-        private void alterarProdutoButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Produto produtoAdicionado = new Produto(4, "asd", 6.5, "222");
-                pController.alterarProduto(produtoAdicionado);
-
-                MessageBox.Show("Produto alterado com sucesso!");
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ocorreu um erro ao alterar o produto." );
-            }
-        }
-
-        private void deletarProdutoButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Produto produtoAdicionado = new Produto(1," asd", 2.5, "");
-                pController.deletarProduto(produtoAdicionado);
-                current.atualizarIdsDeletados(2);
-                MessageBox.Show("Produto deletado com sucesso!");
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ocorreu um erro ao deletar o produto ");
-            }
-        }
-
-        private void adicionarProdutoButton_Click(object sender, EventArgs e)
-        {
-            new AdicionarProdutoView().Show();
-        }
-
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
             {
-                ContextMenu menu = new ContextMenu();
-                menu.MenuItems.Add(new MenuItem("Visualizar"));
-                menu.MenuItems.Add(new MenuItem("Alterar"));
-                menu.MenuItems.Add(new MenuItem("Deletar"));
 
                 rowSelected = dataGridView1.HitTest(e.X, e.Y).RowIndex;
 
@@ -111,9 +70,6 @@ namespace SisFarma.view
                     MessageBox.Show("Selecione uma linha!");
                 }
 
-                menu.Show(dataGridView1, new Point(e.X + 80, e.Y + 15));
-
             }
         }
-    }
 }

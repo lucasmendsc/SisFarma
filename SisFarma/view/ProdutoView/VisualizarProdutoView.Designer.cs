@@ -28,109 +28,96 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.adicionarProdutoButton = new System.Windows.Forms.Button();
-            this.alterarProdutoButton = new System.Windows.Forms.Button();
-            this.deletarProdutoButton = new System.Windows.Forms.Button();
-            this.recuperarPorDescButton = new System.Windows.Forms.Button();
-            this.recuperarProdutoButton = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.recuperarButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.recuperarPorDescricaoTextBox = new System.Windows.Forms.TextBox();
+            this.recuperarTextBox = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // adicionarProdutoButton
+            // recuperarButton
             // 
-            this.adicionarProdutoButton.Location = new System.Drawing.Point(23, 95);
-            this.adicionarProdutoButton.Name = "adicionarProdutoButton";
-            this.adicionarProdutoButton.Size = new System.Drawing.Size(75, 23);
-            this.adicionarProdutoButton.TabIndex = 2;
-            this.adicionarProdutoButton.Text = "Adicionar";
-            this.adicionarProdutoButton.UseVisualStyleBackColor = true;
-            this.adicionarProdutoButton.Click += new System.EventHandler(this.adicionarProdutoButton_Click);
-            // 
-            // alterarProdutoButton
-            // 
-            this.alterarProdutoButton.Location = new System.Drawing.Point(23, 124);
-            this.alterarProdutoButton.Name = "alterarProdutoButton";
-            this.alterarProdutoButton.Size = new System.Drawing.Size(75, 23);
-            this.alterarProdutoButton.TabIndex = 4;
-            this.alterarProdutoButton.Text = "Alterar";
-            this.alterarProdutoButton.UseVisualStyleBackColor = true;
-            this.alterarProdutoButton.Click += new System.EventHandler(this.alterarProdutoButton_Click);
-            // 
-            // deletarProdutoButton
-            // 
-            this.deletarProdutoButton.Location = new System.Drawing.Point(104, 124);
-            this.deletarProdutoButton.Name = "deletarProdutoButton";
-            this.deletarProdutoButton.Size = new System.Drawing.Size(75, 23);
-            this.deletarProdutoButton.TabIndex = 5;
-            this.deletarProdutoButton.Text = "Deletar";
-            this.deletarProdutoButton.UseVisualStyleBackColor = true;
-            this.deletarProdutoButton.Click += new System.EventHandler(this.deletarProdutoButton_Click);
-            // 
-            // recuperarPorDescButton
-            // 
-            this.recuperarPorDescButton.Location = new System.Drawing.Point(593, 24);
-            this.recuperarPorDescButton.Name = "recuperarPorDescButton";
-            this.recuperarPorDescButton.Size = new System.Drawing.Size(195, 23);
-            this.recuperarPorDescButton.TabIndex = 7;
-            this.recuperarPorDescButton.Text = "Recuperar Por Descrição";
-            this.recuperarPorDescButton.UseVisualStyleBackColor = true;
-            this.recuperarPorDescButton.Click += new System.EventHandler(this.recuperarPorDescButton_Click);
-            // 
-            // recuperarProdutoButton
-            // 
-            this.recuperarProdutoButton.Location = new System.Drawing.Point(104, 95);
-            this.recuperarProdutoButton.Name = "recuperarProdutoButton";
-            this.recuperarProdutoButton.Size = new System.Drawing.Size(75, 23);
-            this.recuperarProdutoButton.TabIndex = 3;
-            this.recuperarProdutoButton.Text = "Recuperar";
-            this.recuperarProdutoButton.UseVisualStyleBackColor = true;
+            this.recuperarButton.Location = new System.Drawing.Point(697, 24);
+            this.recuperarButton.Name = "recuperarButton";
+            this.recuperarButton.Size = new System.Drawing.Size(91, 23);
+            this.recuperarButton.TabIndex = 7;
+            this.recuperarButton.Text = "Recuperar";
+            this.recuperarButton.UseVisualStyleBackColor = true;
+            this.recuperarButton.Click += new System.EventHandler(this.recuperarPorDescButton_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(229, 52);
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 52);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(559, 386);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 386);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
-            // recuperarPorDescricaoTextBox
+            // recuperarTextBox
             // 
-            this.recuperarPorDescricaoTextBox.Location = new System.Drawing.Point(229, 26);
-            this.recuperarPorDescricaoTextBox.Name = "recuperarPorDescricaoTextBox";
-            this.recuperarPorDescricaoTextBox.Size = new System.Drawing.Size(358, 20);
-            this.recuperarPorDescricaoTextBox.TabIndex = 9;
+            this.recuperarTextBox.Location = new System.Drawing.Point(12, 26);
+            this.recuperarTextBox.Name = "recuperarTextBox";
+            this.recuperarTextBox.Size = new System.Drawing.Size(679, 20);
+            this.recuperarTextBox.TabIndex = 9;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem,
+            this.alterarToolStripMenuItem,
+            this.deletarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            // 
+            // visualizarToolStripMenuItem
+            // 
+            this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.visualizarToolStripMenuItem.Text = "Visualizar";
+            // 
+            // alterarToolStripMenuItem
+            // 
+            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
+            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarToolStripMenuItem.Text = "Alterar";
+            // 
+            // deletarToolStripMenuItem
+            // 
+            this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
+            this.deletarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deletarToolStripMenuItem.Text = "Deletar";
             // 
             // ProdutoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.recuperarPorDescricaoTextBox);
+            this.Controls.Add(this.recuperarTextBox);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.recuperarPorDescButton);
-            this.Controls.Add(this.deletarProdutoButton);
-            this.Controls.Add(this.alterarProdutoButton);
-            this.Controls.Add(this.recuperarProdutoButton);
-            this.Controls.Add(this.adicionarProdutoButton);
+            this.Controls.Add(this.recuperarButton);
             this.Name = "ProdutoView";
             this.Text = "Visualizar Produtos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button adicionarProdutoButton;
-        private System.Windows.Forms.Button alterarProdutoButton;
-        private System.Windows.Forms.Button deletarProdutoButton;
-        private System.Windows.Forms.Button recuperarPorDescButton;
-        private System.Windows.Forms.Button recuperarProdutoButton;
+        private System.Windows.Forms.Button recuperarButton;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox recuperarPorDescricaoTextBox;
+        private System.Windows.Forms.TextBox recuperarTextBox;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
     }
 }

@@ -50,12 +50,8 @@ namespace SisFarma.view.UsuarioView
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
             {
-                ContextMenu menu = new ContextMenu();
-                menu.MenuItems.Add(new MenuItem("Visualizar"));
-                menu.MenuItems.Add(new MenuItem("Alterar"));
-                menu.MenuItems.Add(new MenuItem("Deletar"));
 
                 rowSelected = dataGridView1.HitTest(e.X, e.Y).RowIndex;
 
@@ -64,9 +60,6 @@ namespace SisFarma.view.UsuarioView
                     MessageBox.Show("Selecione uma linha!");
                 }
 
-                menu.Show(dataGridView1, new Point(e.X + 80, e.Y + 15));
-
             }
         }
-    }
 }

@@ -28,15 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.recuperarTextBox = new System.Windows.Forms.TextBox();
             this.recuperarButton = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 47);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 391);
@@ -47,7 +54,7 @@
             // 
             this.recuperarTextBox.Location = new System.Drawing.Point(12, 21);
             this.recuperarTextBox.Name = "recuperarTextBox";
-            this.recuperarTextBox.Size = new System.Drawing.Size(645, 20);
+            this.recuperarTextBox.Size = new System.Drawing.Size(654, 20);
             this.recuperarTextBox.TabIndex = 1;
             // 
             // recuperarButton
@@ -60,6 +67,33 @@
             this.recuperarButton.UseVisualStyleBackColor = true;
             this.recuperarButton.Click += new System.EventHandler(this.recuperarButton_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.visualizarToolStripMenuItem,
+            this.alterarToolStripMenuItem,
+            this.deletarToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            // 
+            // visualizarToolStripMenuItem
+            // 
+            this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
+            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.visualizarToolStripMenuItem.Text = "Visualizar";
+            // 
+            // alterarToolStripMenuItem
+            // 
+            this.alterarToolStripMenuItem.Name = "alterarToolStripMenuItem";
+            this.alterarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alterarToolStripMenuItem.Text = "Alterar";
+            // 
+            // deletarToolStripMenuItem
+            // 
+            this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
+            this.deletarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deletarToolStripMenuItem.Text = "Deletar";
+            // 
             // VisualizarUsuarioView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -71,6 +105,7 @@
             this.Name = "VisualizarUsuarioView";
             this.Text = "Visualizar Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,5 +116,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox recuperarTextBox;
         private System.Windows.Forms.Button recuperarButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
     }
 }

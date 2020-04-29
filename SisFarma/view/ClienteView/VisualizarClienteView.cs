@@ -66,10 +66,8 @@ namespace SisFarma.view.ClienteView
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Left)
             {
-
-                contextMenuStrip1.Show();
 
                 rowSelected = dataGridView1.HitTest(e.X, e.Y).RowIndex;
 
