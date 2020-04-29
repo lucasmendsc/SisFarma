@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.recuperarClienteTextBox = new System.Windows.Forms.TextBox();
-            this.recuperarClienteButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recuperarClienteTextBox = new System.Windows.Forms.TextBox();
+            this.recuperarClienteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -49,23 +49,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 400);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
-            // 
-            // recuperarClienteTextBox
-            // 
-            this.recuperarClienteTextBox.Location = new System.Drawing.Point(12, 12);
-            this.recuperarClienteTextBox.Name = "recuperarClienteTextBox";
-            this.recuperarClienteTextBox.Size = new System.Drawing.Size(650, 20);
-            this.recuperarClienteTextBox.TabIndex = 1;
-            // 
-            // recuperarClienteButton
-            // 
-            this.recuperarClienteButton.Location = new System.Drawing.Point(668, 9);
-            this.recuperarClienteButton.Name = "recuperarClienteButton";
-            this.recuperarClienteButton.Size = new System.Drawing.Size(120, 23);
-            this.recuperarClienteButton.TabIndex = 2;
-            this.recuperarClienteButton.Text = "Recuperar";
-            this.recuperarClienteButton.UseVisualStyleBackColor = true;
-            this.recuperarClienteButton.Click += new System.EventHandler(this.recuperarClienteButton_Click);
             // 
             // contextMenuStrip1
             // 
@@ -94,6 +77,24 @@
             this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
             this.deletarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deletarToolStripMenuItem.Text = "Deletar";
+            this.deletarToolStripMenuItem.Click += new System.EventHandler(this.deletarToolStripMenuItem_Click);
+            // 
+            // recuperarClienteTextBox
+            // 
+            this.recuperarClienteTextBox.Location = new System.Drawing.Point(12, 12);
+            this.recuperarClienteTextBox.Name = "recuperarClienteTextBox";
+            this.recuperarClienteTextBox.Size = new System.Drawing.Size(650, 20);
+            this.recuperarClienteTextBox.TabIndex = 1;
+            // 
+            // recuperarClienteButton
+            // 
+            this.recuperarClienteButton.Location = new System.Drawing.Point(668, 9);
+            this.recuperarClienteButton.Name = "recuperarClienteButton";
+            this.recuperarClienteButton.Size = new System.Drawing.Size(120, 23);
+            this.recuperarClienteButton.TabIndex = 2;
+            this.recuperarClienteButton.Text = "Recuperar";
+            this.recuperarClienteButton.UseVisualStyleBackColor = true;
+            this.recuperarClienteButton.Click += new System.EventHandler(this.recuperarClienteButton_Click);
             // 
             // VisualizarClienteView
             // 

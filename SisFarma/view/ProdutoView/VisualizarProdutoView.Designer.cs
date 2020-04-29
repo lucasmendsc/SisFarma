@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.recuperarButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.recuperarTextBox = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recuperarTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -59,13 +59,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(776, 386);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
-            // 
-            // recuperarTextBox
-            // 
-            this.recuperarTextBox.Location = new System.Drawing.Point(12, 26);
-            this.recuperarTextBox.Name = "recuperarTextBox";
-            this.recuperarTextBox.Size = new System.Drawing.Size(679, 20);
-            this.recuperarTextBox.TabIndex = 9;
             // 
             // contextMenuStrip1
             // 
@@ -93,6 +86,14 @@
             this.deletarToolStripMenuItem.Name = "deletarToolStripMenuItem";
             this.deletarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deletarToolStripMenuItem.Text = "Deletar";
+            this.deletarToolStripMenuItem.Click += new System.EventHandler(this.deletarToolStripMenuItem_Click);
+            // 
+            // recuperarTextBox
+            // 
+            this.recuperarTextBox.Location = new System.Drawing.Point(12, 26);
+            this.recuperarTextBox.Name = "recuperarTextBox";
+            this.recuperarTextBox.Size = new System.Drawing.Size(679, 20);
+            this.recuperarTextBox.TabIndex = 9;
             // 
             // ProdutoView
             // 

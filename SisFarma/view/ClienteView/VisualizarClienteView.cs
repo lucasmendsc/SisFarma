@@ -83,5 +83,21 @@ namespace SisFarma.view.ClienteView
         {
 
         }
+
+        private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                clienteController.deletarCliente
+                    (clienteController.recuperarCliente(rowSelected - 1));
+                current.atualizarIdsDeletados(1);
+                MessageBox.Show("Cliente deletado com sucesso!");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao deletar o cliente. ");
+            }
+        }
     }
 }

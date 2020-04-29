@@ -45,6 +45,16 @@ namespace SisFarma.view.UsuarioView
 
         private void recuperarButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Usuario usuario =
+                    usuarioController.recuperarUsuarioPorNome(recuperarTextBox.Text);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao recuperar o usuário.");
+            }
 
         }
 
@@ -62,4 +72,21 @@ namespace SisFarma.view.UsuarioView
 
             }
         }
+
+        private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                usuarioController.deletarUsuario
+                      (usuarioController.recuperarUsuarioId(rowSelected - 1));
+                current.atualizarIdsDeletados(5);
+                MessageBox.Show("Usuario deletado com sucesso!");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao deletar o usuário. ");
+            }
+        }
+    }
 }

@@ -72,4 +72,21 @@ namespace SisFarma.view
 
             }
         }
+
+        private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pController.deletarProduto
+                    (pController.recuperarPorId(rowSelected - 1));
+                current.atualizarIdsDeletados(2);
+                MessageBox.Show("Produto deletado com sucesso!");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ocorreu um erro ao deletar o produto. ");
+            }
+        }
+    }
 }
