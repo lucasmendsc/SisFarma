@@ -26,8 +26,9 @@ namespace SisFarma.view
         {
             dt.Columns.Add("Descrição");
             dt.Columns.Add("Preço");
-
+            dt.Columns.Add("Id");
             dataGridView1.DataSource = dt;
+            dataGridView1.Columns["Id"].Visible = false;
             this.inicializarRows();
         }
 
@@ -38,6 +39,7 @@ namespace SisFarma.view
                 DataRow row = dt.NewRow();
                 row["Descrição"] = p.Descricao;
                 row["Preço"] = p.Valor;
+                row["Id"] = p.Id;
 
                 dt.Rows.Add(row);
             }
@@ -63,9 +65,9 @@ namespace SisFarma.view
             if (e.Button == MouseButtons.Left)
             {
 
-                rowSelected = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+                rowSelected = e.RowIndex;
 
-                if (rowSelected >= 0)
+                if (rowSelected <= 0)
                 {
                     MessageBox.Show("Selecione uma linha!");
                 }
@@ -91,12 +93,16 @@ namespace SisFarma.view
 
         private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new MostrarProdutoView(pController.recuperarPorId(1)).Show();
+            DataGridViewRow selectedRow = dataGridView1.Rows[rowSelected];
+            int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+            new MostrarProdutoView(pController.recuperarPorId(id)).Show();
         }
 
         private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new AlterarProdutoView(pController.recuperarPorId(1)).Show();
+            DataGridViewRow selectedRow = dataGridView1.Rows[rowSelected];
+            int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+            new AlterarProdutoView(pController.recuperarPorId(id)).Show();
         }
     }
 }
