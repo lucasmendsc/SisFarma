@@ -36,7 +36,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                FirebaseResponse response = clientFireBase.Get("P" + id);
+                FirebaseResponse response = clientFireBase.Get("P000" + id);
                 return response.ResultAs<Produto>();
 
             }catch(Exception exc)
@@ -66,7 +66,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                clientFireBase.Update("P" + produto.Id, produto);
+                clientFireBase.Update("P000" + produto.Id, produto);
             }
             catch (Exception exc)
             {
@@ -79,7 +79,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                clientFireBase.Delete("P" + produto.Id);
+                clientFireBase.Delete("P000" + produto.Id);
             }
             catch (Exception exc)
             {
@@ -91,7 +91,7 @@ namespace SisFarma.model.DAO
         public ArrayList recuperarTodos()
         {
 
-            int i = 0;
+            int i = 1;
             CurrentIdDAO currentId = new CurrentIdDAO();
             int cont = currentId.recuperarQuantidade(2);
             ArrayList produtos = new ArrayList();
@@ -99,7 +99,7 @@ namespace SisFarma.model.DAO
             while (true)
             {
 
-                if (i >= cont - 1)
+                if (i == cont + 1)
                 {
                     break;
                 }

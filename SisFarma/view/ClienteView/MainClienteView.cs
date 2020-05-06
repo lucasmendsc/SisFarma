@@ -5,17 +5,18 @@ using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace SisFarma.view
+namespace SisFarma.view.ClienteView
 {
-    public partial class ProdutoView : Form
+    public partial class MainClienteView : Form
     {
-        private ProdutoController pController;
+        private ClienteController clienteController;
         private CurrentIdController current;
         private DataTable dt;
         private int rowSelected;
-        public ProdutoView()
+
+        public MainClienteView()
         {
-            pController = new ProdutoController();
+            clienteController = new ClienteController();
             current = new CurrentIdController();
             this.dt = new DataTable();
             InitializeComponent();
@@ -23,9 +24,11 @@ namespace SisFarma.view
         }
 
         private void inicializarDataTable()
-        {
-            dt.Columns.Add("Descrição");
-            dt.Columns.Add("Preço");
+        {         
+            dt.Columns.Add("Nome");
+            dt.Columns.Add("Telefone");
+            dt.Columns.Add("Cidade");
+            dt.Columns.Add("Logradouro");
 
             dataGridView1.DataSource = dt;
             this.inicializarRows();
@@ -33,23 +36,26 @@ namespace SisFarma.view
 
         private void inicializarRows()
         {
-            foreach (Produto p in pController.recuperarTodos())
+            foreach (Cliente c in clienteController.recuperarTodos())
             {
                 DataRow row = dt.NewRow();
-                row["Descrição"] = p.Descricao;
-                row["Preço"] = p.Valor;
+                row["Nome"] = c.Nome;
+                row["Telefone"] = c.Telefone;
+                row["Cidade"] = c.Cidade;
+                row["Logradouro"] = c.Logradouro;
 
                 dt.Rows.Add(row);
             }
         }
 
-        private void recuperarPorDescButton_Click(object sender, EventArgs e)
+        private void recuperarClienteButton_Click(object sender, EventArgs e)
         {
             try
             {
-                Produto produto = pController.recuperarPorDescricao
-                                        (recuperarTextBox.Text);
-                MessageBox.Show(produto.Descricao);
+                Cliente c = clienteController.recuperarPorNome
+                                (recuperarClienteTextBox.Text);
+                                        
+                MessageBox.Show(c.Nome);
 
             }
             catch (Exception)
@@ -63,9 +69,9 @@ namespace SisFarma.view
             if (e.Button == MouseButtons.Left)
             {
 
-                rowSelected = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+                rowSelected = e.RowIndex;
 
-                if (rowSelected >= 0)
+                if (rowSelected < 0)
                 {
                     MessageBox.Show("Selecione uma linha!");
                 }
@@ -73,30 +79,25 @@ namespace SisFarma.view
             }
         }
 
+        private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                pController.deletarProduto
-                    (pController.recuperarPorId(rowSelected - 1));
-                current.atualizarIdsDeletados(2);
-                MessageBox.Show("Produto deletado com sucesso!");
+                clienteController.deletarCliente
+                    (clienteController.recuperarCliente(rowSelected - 1));
+                current.atualizarIdsDeletados(1);
+                MessageBox.Show("Cliente deletado com sucesso!");
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocorreu um erro ao deletar o produto. ");
+                MessageBox.Show("Ocorreu um erro ao deletar o cliente. ");
             }
-        }
-
-        private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new MostrarProdutoView(pController.recuperarPorId(1)).Show();
-        }
-
-        private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new AlterarProdutoView(pController.recuperarPorId(1)).Show();
         }
     }
 }

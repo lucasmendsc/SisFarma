@@ -48,6 +48,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +73,12 @@
     <Compile Include="model\DAO\ProdutoDAO.cs" />
     <Compile Include="model\DAO\UsuarioDAO.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="view\ProdutoView\AlterarProdutoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ProdutoView\AlterarProdutoView.Designer.cs">
+      <DependentUpon>AlterarProdutoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\ClienteView\AdicionarClienteView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +90,12 @@
     </Compile>
     <Compile Include="view\ClienteView\VisualizarClienteView.Designer.cs">
       <DependentUpon>VisualizarClienteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ProdutoView\MostrarProdutoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ProdutoView\MostrarProdutoView.Designer.cs">
+      <DependentUpon>MostrarProdutoView.cs</DependentUpon>
     </Compile>
     <Compile Include="view\PedidoView\AdicionarPedidoView.cs">
       <SubType>Form</SubType>
@@ -158,6 +171,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\ProdutoView\AlterarProdutoView.resx">
+      <DependentUpon>AlterarProdutoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\ProdutoView\MostrarProdutoView.resx">
+      <DependentUpon>MostrarProdutoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\ProdutoView\VisualizarProdutoView.resx">
       <DependentUpon>VisualizarProdutoView.cs</DependentUpon>
