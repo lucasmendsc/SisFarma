@@ -45,5 +45,45 @@ namespace SisFarma.view.UsuarioView
         {
             this.Close();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void senhaLabelText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginLabelText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nomeLabelText_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void confirmacaoSenhaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nomeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void senhaTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

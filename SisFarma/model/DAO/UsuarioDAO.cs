@@ -67,7 +67,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                clientFireBase.Update("U" + usuario.Id, usuario);
+                clientFireBase.Update("U000" + usuario.Id, usuario);
             }
             catch (Exception exc)
             {
@@ -80,7 +80,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                clientFireBase.Delete("U" + usuario.Id);
+                clientFireBase.Delete("U000" + usuario.Id);
             }
             catch (Exception exc)
             {
@@ -99,7 +99,7 @@ namespace SisFarma.model.DAO
             while (true)
             {
 
-                if (i >= cont - 1)
+                if (i == cont + 1)
                 {
                     break;
                 }

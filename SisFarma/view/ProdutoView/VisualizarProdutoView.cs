@@ -67,7 +67,7 @@ namespace SisFarma.view
 
                 rowSelected = e.RowIndex;
 
-                if (rowSelected <= 0)
+                if (rowSelected < 0)
                 {
                     MessageBox.Show("Selecione uma linha!");
                 }

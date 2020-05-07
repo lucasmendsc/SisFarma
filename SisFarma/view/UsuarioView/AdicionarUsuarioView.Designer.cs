@@ -46,6 +46,7 @@
             this.senhaTextBox.Name = "senhaTextBox";
             this.senhaTextBox.Size = new System.Drawing.Size(100, 20);
             this.senhaTextBox.TabIndex = 2;
+            this.senhaTextBox.TextChanged += new System.EventHandler(this.senhaTextBox_TextChanged);
             // 
             // loginTextBox
             // 
@@ -53,6 +54,7 @@
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(100, 20);
             this.loginTextBox.TabIndex = 1;
+            this.loginTextBox.TextChanged += new System.EventHandler(this.loginTextBox_TextChanged);
             // 
             // nomeTextBox
             // 
@@ -60,6 +62,7 @@
             this.nomeTextBox.Name = "nomeTextBox";
             this.nomeTextBox.Size = new System.Drawing.Size(100, 20);
             this.nomeTextBox.TabIndex = 0;
+            this.nomeTextBox.TextChanged += new System.EventHandler(this.nomeTextBox_TextChanged);
             // 
             // confirmacaoSenhaTextBox
             // 
@@ -67,6 +70,7 @@
             this.confirmacaoSenhaTextBox.Name = "confirmacaoSenhaTextBox";
             this.confirmacaoSenhaTextBox.Size = new System.Drawing.Size(100, 20);
             this.confirmacaoSenhaTextBox.TabIndex = 3;
+            this.confirmacaoSenhaTextBox.TextChanged += new System.EventHandler(this.confirmacaoSenhaTextBox_TextChanged);
             // 
             // nomeLabelText
             // 
@@ -76,6 +80,7 @@
             this.nomeLabelText.Size = new System.Drawing.Size(44, 13);
             this.nomeLabelText.TabIndex = 4;
             this.nomeLabelText.Text = "Nome : ";
+            this.nomeLabelText.Click += new System.EventHandler(this.nomeLabelText_Click);
             // 
             // loginLabelText
             // 
@@ -85,6 +90,7 @@
             this.loginLabelText.Size = new System.Drawing.Size(42, 13);
             this.loginLabelText.TabIndex = 5;
             this.loginLabelText.Text = "Login : ";
+            this.loginLabelText.Click += new System.EventHandler(this.loginLabelText_Click);
             // 
             // senhaLabelText
             // 
@@ -94,6 +100,7 @@
             this.senhaLabelText.Size = new System.Drawing.Size(47, 13);
             this.senhaLabelText.TabIndex = 6;
             this.senhaLabelText.Text = "Senha : ";
+            this.senhaLabelText.Click += new System.EventHandler(this.senhaLabelText_Click);
             // 
             // label4
             // 
@@ -103,6 +110,7 @@
             this.label4.Size = new System.Drawing.Size(122, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Confirmação de senha : ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // adicionarButton
             // 

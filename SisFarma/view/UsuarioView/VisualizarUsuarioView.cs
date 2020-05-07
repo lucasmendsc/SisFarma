@@ -26,8 +26,10 @@ namespace SisFarma.view.UsuarioView
         {
             dt.Columns.Add("Nome");
             dt.Columns.Add("Login");
-
+            dt.Columns.Add("Id");        
             dataGridView1.DataSource = dt;
+
+            dataGridView1.Columns["Id"].Visible = false;
             this.inicializarRows();
         }
 
@@ -38,6 +40,7 @@ namespace SisFarma.view.UsuarioView
                 DataRow row = dt.NewRow();
                 row["Nome"] = u.Nome;
                 row["Login"] = u.Login;
+                row["Id"] = u.Id;
 
                 dt.Rows.Add(row);
             }
@@ -63,9 +66,9 @@ namespace SisFarma.view.UsuarioView
             if (e.Button == MouseButtons.Left)
             {
 
-                rowSelected = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+                rowSelected = e.RowIndex;
 
-                if (rowSelected >= 0)
+                if (rowSelected < 0)
                 {
                     MessageBox.Show("Selecione uma linha!");
                 }
@@ -73,12 +76,26 @@ namespace SisFarma.view.UsuarioView
             }
         }
 
+        private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new MostrarUsuarioView
+                    (usuarioController.recuperarUsuarioId
+                        (this.retornarId())).Show();
+        }
+
+        private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AlterarUsuarioView
+                    (usuarioController.recuperarUsuarioId
+                        (this.retornarId())).Show();
+        }
+
         private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 usuarioController.deletarUsuario
-                      (usuarioController.recuperarUsuarioId(rowSelected - 1));
+                      (usuarioController.recuperarUsuarioId(this.retornarId()));
                 current.atualizarIdsDeletados(5);
                 MessageBox.Show("Usuario deletado com sucesso!");
 
@@ -87,6 +104,11 @@ namespace SisFarma.view.UsuarioView
             {
                 MessageBox.Show("Ocorreu um erro ao deletar o usuário. ");
             }
+        }
+        private int retornarId()
+        {
+            DataGridViewRow selectedRow = dataGridView1.Rows[rowSelected];
+            return Convert.ToInt32(selectedRow.Cells["Id"].Value);
         }
     }
 }

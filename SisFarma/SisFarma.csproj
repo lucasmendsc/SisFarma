@@ -73,6 +73,12 @@
     <Compile Include="model\DAO\ProdutoDAO.cs" />
     <Compile Include="model\DAO\UsuarioDAO.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="view\UsuarioView\AlterarUsuarioView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\UsuarioView\AlterarUsuarioView.Designer.cs">
+      <DependentUpon>AlterarUsuarioView.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\ClienteView\AlterarClienteView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
     </Compile>
     <Compile Include="view\ClienteView\MostrarClienteView.Designer.cs">
       <DependentUpon>MostrarClienteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\UsuarioView\MostrarUsuarioView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\UsuarioView\MostrarUsuarioView.Designer.cs">
+      <DependentUpon>MostrarUsuarioView.cs</DependentUpon>
     </Compile>
     <Compile Include="view\ProdutoView\AlterarProdutoView.cs">
       <SubType>Form</SubType>
@@ -201,6 +213,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\UsuarioView\AdicionarUsuarioView.resx">
       <DependentUpon>AdicionarUsuarioView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\UsuarioView\AlterarUsuarioView.resx">
+      <DependentUpon>AlterarUsuarioView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\UsuarioView\MostrarUsuarioView.resx">
+      <DependentUpon>MostrarUsuarioView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\UsuarioView\VisualizarUsuarioView.resx">
       <DependentUpon>VisualizarUsuarioView.cs</DependentUpon>

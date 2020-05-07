@@ -51,16 +51,16 @@
             this.precoValorLabelText.Name = "precoValorLabelText";
             this.precoValorLabelText.Size = new System.Drawing.Size(35, 13);
             this.precoValorLabelText.TabIndex = 1;
-            this.precoValorLabelText.Text = "label2";
+            this.precoValorLabelText.Text = "Preço";
             // 
             // descricaoValorLabelText
             // 
             this.descricaoValorLabelText.AutoSize = true;
             this.descricaoValorLabelText.Location = new System.Drawing.Point(323, 79);
             this.descricaoValorLabelText.Name = "descricaoValorLabelText";
-            this.descricaoValorLabelText.Size = new System.Drawing.Size(35, 13);
+            this.descricaoValorLabelText.Size = new System.Drawing.Size(55, 13);
             this.descricaoValorLabelText.TabIndex = 2;
-            this.descricaoValorLabelText.Text = "label1";
+            this.descricaoValorLabelText.Text = "Descrição";
             // 
             // precoLabelText
             // 
