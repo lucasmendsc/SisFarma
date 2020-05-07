@@ -27,6 +27,8 @@ namespace SisFarma.view
         {
             try
             {
+                produto.Descricao = descricaoTextBox.Text;
+                produto.Valor = Convert.ToDouble(precoTextBox.Text);
                 pController.alterarProduto(produto);
                 MessageBox.Show("Produto alterado com sucesso!");
             }

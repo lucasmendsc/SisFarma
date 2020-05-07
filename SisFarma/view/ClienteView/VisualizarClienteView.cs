@@ -29,8 +29,10 @@ namespace SisFarma.view.ClienteView
             dt.Columns.Add("Telefone");
             dt.Columns.Add("Cidade");
             dt.Columns.Add("Logradouro");
-
+            dt.Columns.Add("Id");
             dataGridView1.DataSource = dt;
+
+            dataGridView1.Columns["Id"].Visible = false;
             this.inicializarRows();
         }
 
@@ -43,6 +45,7 @@ namespace SisFarma.view.ClienteView
                 row["Telefone"] = c.Telefone;
                 row["Cidade"] = c.Cidade;
                 row["Logradouro"] = c.Logradouro;
+                row["Id"] = c.Id;
 
                 dt.Rows.Add(row);
             }
@@ -69,7 +72,7 @@ namespace SisFarma.view.ClienteView
             if (e.Button == MouseButtons.Left)
             {
 
-                rowSelected = dataGridView1.HitTest(e.X, e.Y).RowIndex;
+                rowSelected = e.RowIndex;
 
                 if (rowSelected >= 0)
                 {
@@ -84,12 +87,19 @@ namespace SisFarma.view.ClienteView
 
         }
 
+        private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void deletarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
                 clienteController.deletarCliente
-                    (clienteController.recuperarCliente(rowSelected - 1));
+                    (clienteController.recuperarCliente
+                        (this.retornarId()));
+
                 current.atualizarIdsDeletados(1);
                 MessageBox.Show("Cliente deletado com sucesso!");
 
@@ -98,6 +108,12 @@ namespace SisFarma.view.ClienteView
             {
                 MessageBox.Show("Ocorreu um erro ao deletar o cliente. ");
             }
+        }
+
+        private int retornarId()
+        {
+            DataGridViewRow selectedRow = dataGridView1.Rows[rowSelected];
+            return Convert.ToInt32(selectedRow.Cells["Id"].Value);
         }
     }
 }

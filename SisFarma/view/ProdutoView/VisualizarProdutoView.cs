@@ -80,7 +80,7 @@ namespace SisFarma.view
             try
             {
                 pController.deletarProduto
-                    (pController.recuperarPorId(rowSelected - 1));
+                    (pController.recuperarPorId(this.retornarId()));
                 current.atualizarIdsDeletados(2);
                 MessageBox.Show("Produto deletado com sucesso!");
 
@@ -93,16 +93,23 @@ namespace SisFarma.view
 
         private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow = dataGridView1.Rows[rowSelected];
-            int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-            new MostrarProdutoView(pController.recuperarPorId(id)).Show();
+            new MostrarProdutoView
+                    (pController.recuperarPorId
+                            (this.retornarId())).Show();
         }
 
         private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+            new AlterarProdutoView
+                    (pController.recuperarPorId
+                            (this.retornarId())).Show();
+        }
+
+        private int retornarId()
+        {
             DataGridViewRow selectedRow = dataGridView1.Rows[rowSelected];
-            int id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
-            new AlterarProdutoView(pController.recuperarPorId(id)).Show();
+            return Convert.ToInt32(selectedRow.Cells["Id"].Value);
         }
     }
 }

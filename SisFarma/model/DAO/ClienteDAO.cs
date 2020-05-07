@@ -38,7 +38,7 @@ namespace SisFarma.model.DAO
 
             try
             {
-                FirebaseResponse response = clientFireBase.Get("C" + id);
+                FirebaseResponse response = clientFireBase.Get("C000" + id);
                 return response.ResultAs<Cliente>();
             }
             catch (Exception exc)
@@ -53,7 +53,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                clientFireBase.Update("C" + cliente.Id, cliente);
+                clientFireBase.Update("C000" + cliente.Id, cliente);
 
             }
             catch (Exception exc)
@@ -68,7 +68,7 @@ namespace SisFarma.model.DAO
 
             try
             {
-                clientFireBase.Delete("C" + cliente.Id);
+                clientFireBase.Delete("C000" + cliente.Id);
 
             }
             catch (Exception exc)
@@ -89,7 +89,7 @@ namespace SisFarma.model.DAO
             while (true)
                 {
 
-                if (i >= cont - 1)
+                if (i == cont + 1)
                 {
                     break;
                 }

@@ -73,6 +73,18 @@
     <Compile Include="model\DAO\ProdutoDAO.cs" />
     <Compile Include="model\DAO\UsuarioDAO.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="view\ClienteView\AlterarClienteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ClienteView\AlterarClienteView.Designer.cs">
+      <DependentUpon>AlterarClienteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\ClienteView\MostrarClienteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\ClienteView\MostrarClienteView.Designer.cs">
+      <DependentUpon>MostrarClienteView.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\ProdutoView\AlterarProdutoView.cs">
       <SubType>Form</SubType>
     </Compile>
