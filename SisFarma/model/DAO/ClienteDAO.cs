@@ -89,7 +89,7 @@ namespace SisFarma.model.DAO
             while (true)
                 {
 
-                if (i == cont + 1)
+                if (i == cont + 2)
                 {
                     break;
                 }

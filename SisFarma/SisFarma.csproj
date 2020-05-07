@@ -166,8 +166,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="view\ClienteView\AlterarClienteView.resx">
+      <DependentUpon>AlterarClienteView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\ClienteView\AdicionarClienteView.resx">
       <DependentUpon>AdicionarClienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\ClienteView\MostrarClienteView.resx">
+      <DependentUpon>MostrarClienteView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\ClienteView\VisualizarClienteView.resx">
       <DependentUpon>VisualizarClienteView.cs</DependentUpon>

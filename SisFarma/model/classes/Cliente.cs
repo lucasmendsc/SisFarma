@@ -2,7 +2,7 @@
 
 namespace SisFarma.model.classes
 {
-    class Cliente
+    public class Cliente
     {
         private int id;
         private String nome;

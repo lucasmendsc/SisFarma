@@ -74,7 +74,7 @@ namespace SisFarma.view.ClienteView
 
                 rowSelected = e.RowIndex;
 
-                if (rowSelected >= 0)
+                if (rowSelected < 0)
                 {
                     MessageBox.Show("Selecione uma linha!");
                 }
@@ -85,11 +85,15 @@ namespace SisFarma.view.ClienteView
         private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+            new MostrarClienteView(clienteController.recuperarCliente(this.retornarId())).Show();
+
         }
 
         private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new AlterarClienteView
+                    (clienteController.recuperarCliente
+                        (this.retornarId())).Show();
         }
 
         private void deletarToolStripMenuItem_Click(object sender, EventArgs e)

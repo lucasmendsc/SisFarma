@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SisFarma.model.classes;
 using System.Windows.Forms;
 
 namespace SisFarma.view
 {
     public partial class MostrarClienteView : Form
     {
-        public MostrarClienteView()
+        public MostrarClienteView(Cliente cliente)
         {
             InitializeComponent();
+            nomeValorLabelText.Text = cliente.Nome;
+            cpfValorLabelText.Text = cliente.CPF;
+            rgValorLabelText.Text = cliente.Rg;
+            dataNascimentoValorLabelText.Text = cliente.DataNasc.ToString();
+            sexoValorLabelText.Text = cliente.Sexo;
+            telefoneValorLabelText.Text = cliente.Telefone;
+            cepValorLabelText.Text = cliente.CEP;
+            cidadeValorLabelText.Text = cliente.Cidade;
+            logradouroValorLabelText.Text = cliente.Logradouro;           
+        }
+
+        private void voltarButton_Click(object sender, System.EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

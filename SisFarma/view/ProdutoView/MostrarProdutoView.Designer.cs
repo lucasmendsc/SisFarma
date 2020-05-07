@@ -32,12 +32,13 @@
             this.precoValorLabelText = new System.Windows.Forms.Label();
             this.descricaoValorLabelText = new System.Windows.Forms.Label();
             this.precoLabelText = new System.Windows.Forms.Label();
+            this.voltarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // descricaoLabelText
             // 
             this.descricaoLabelText.AutoSize = true;
-            this.descricaoLabelText.Location = new System.Drawing.Point(115, 71);
+            this.descricaoLabelText.Location = new System.Drawing.Point(202, 79);
             this.descricaoLabelText.Name = "descricaoLabelText";
             this.descricaoLabelText.Size = new System.Drawing.Size(64, 13);
             this.descricaoLabelText.TabIndex = 0;
@@ -46,7 +47,7 @@
             // precoValorLabelText
             // 
             this.precoValorLabelText.AutoSize = true;
-            this.precoValorLabelText.Location = new System.Drawing.Point(236, 126);
+            this.precoValorLabelText.Location = new System.Drawing.Point(323, 134);
             this.precoValorLabelText.Name = "precoValorLabelText";
             this.precoValorLabelText.Size = new System.Drawing.Size(35, 13);
             this.precoValorLabelText.TabIndex = 1;
@@ -55,7 +56,7 @@
             // descricaoValorLabelText
             // 
             this.descricaoValorLabelText.AutoSize = true;
-            this.descricaoValorLabelText.Location = new System.Drawing.Point(236, 71);
+            this.descricaoValorLabelText.Location = new System.Drawing.Point(323, 79);
             this.descricaoValorLabelText.Name = "descricaoValorLabelText";
             this.descricaoValorLabelText.Size = new System.Drawing.Size(35, 13);
             this.descricaoValorLabelText.TabIndex = 2;
@@ -64,17 +65,28 @@
             // precoLabelText
             // 
             this.precoLabelText.AutoSize = true;
-            this.precoLabelText.Location = new System.Drawing.Point(139, 126);
+            this.precoLabelText.Location = new System.Drawing.Point(226, 134);
             this.precoLabelText.Name = "precoLabelText";
             this.precoLabelText.Size = new System.Drawing.Size(47, 13);
             this.precoLabelText.TabIndex = 3;
             this.precoLabelText.Text = "Preço  : ";
+            // 
+            // voltarButton
+            // 
+            this.voltarButton.Location = new System.Drawing.Point(205, 211);
+            this.voltarButton.Name = "voltarButton";
+            this.voltarButton.Size = new System.Drawing.Size(153, 23);
+            this.voltarButton.TabIndex = 4;
+            this.voltarButton.Text = "Voltar";
+            this.voltarButton.UseVisualStyleBackColor = true;
+            this.voltarButton.Click += new System.EventHandler(this.voltarButton_Click);
             // 
             // MostrarProdutoView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 360);
+            this.Controls.Add(this.voltarButton);
             this.Controls.Add(this.precoLabelText);
             this.Controls.Add(this.descricaoValorLabelText);
             this.Controls.Add(this.precoValorLabelText);
@@ -92,5 +104,6 @@
         private System.Windows.Forms.Label precoValorLabelText;
         private System.Windows.Forms.Label descricaoValorLabelText;
         private System.Windows.Forms.Label precoLabelText;
+        private System.Windows.Forms.Button voltarButton;
     }
 }
