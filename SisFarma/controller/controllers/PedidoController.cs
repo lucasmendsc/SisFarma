@@ -52,11 +52,11 @@ namespace SisFarma.controller.controllers
             }
         }
 
-        public ArrayList recuperarTodos()
+        public ArrayList recuperarTodos(int status)
         {
             try
             {
-                return pedidoDAO.recuperarTodos();
+                return pedidoDAO.recuperarTodos(status);
 
             }
             catch(Exception exc)

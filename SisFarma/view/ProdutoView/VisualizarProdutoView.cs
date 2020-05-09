@@ -15,10 +15,10 @@ namespace SisFarma.view
         private int rowSelected;
         public ProdutoView()
         {
+            InitializeComponent();
             pController = new ProdutoController();
             current = new CurrentIdController();
             this.dt = new DataTable();
-            InitializeComponent();
             this.inicializarDataTable();
         }
 

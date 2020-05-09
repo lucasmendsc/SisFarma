@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace SisFarma.model.classes
 {
-    class Pedido
+    public class Pedido
     {
         private int id;
         private DateTime dataPedido;

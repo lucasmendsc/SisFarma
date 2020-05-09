@@ -36,7 +36,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                clientFireBase.Update("P" + pedido.Id, pedido);
+                clientFireBase.Update("P000" + pedido.Id, pedido);
             }
             catch (Exception exc)
             {
@@ -45,13 +45,13 @@ namespace SisFarma.model.DAO
             }
         }
 
-        public Produto recuperarProdutoId(int id)
+        public Pedido recuperarProdutoId(int id)
         {
 
             try
             {
-                FirebaseResponse response = clientFireBase.Get("P" + id);
-                return response.ResultAs<Produto>();
+                FirebaseResponse response = clientFireBase.Get("P000" + id);
+                return response.ResultAs<Pedido>();
             }
             catch (Exception exc)
             {
@@ -65,7 +65,7 @@ namespace SisFarma.model.DAO
         {
             try
             {
-                clientFireBase.Delete("P" + pedido.Id);
+                clientFireBase.Delete("P000" + pedido.Id);
             }
             catch (Exception exc)
             {
@@ -74,7 +74,7 @@ namespace SisFarma.model.DAO
             }
         }
 
-        public ArrayList recuperarTodos()
+        public ArrayList recuperarTodos(int opcao)
         {
 
             int i = 1;
@@ -84,15 +84,28 @@ namespace SisFarma.model.DAO
             while (true)
             {
 
-                if (i >= cont - 1)
+                if (i == cont - 1)
                 {
                     break;
                 }
 
                 try
                 {
-                    FirebaseResponse response = clientFireBase.Get("P" + i);
-                    produtos.Add(response.ResultAs<Produto>());
+                    FirebaseResponse response = clientFireBase.Get("P000" + i);
+                    if (opcao == 1)
+                    {
+                        produtos.Add(response.ResultAs<Pedido>());
+                    }else if(opcao == 2)
+                    {
+                        if(response.ResultAs<Pedido>().Status == 1)
+                        produtos.Add(response.ResultAs<Pedido>());
+                    }
+                    else
+                    {
+                        if (response.ResultAs<Pedido>().Status == 2)
+                            produtos.Add(response.ResultAs<Pedido>());
+                    }
+                    
                 }
                 catch (Exception)
                 {
