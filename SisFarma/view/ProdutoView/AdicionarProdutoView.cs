@@ -23,7 +23,7 @@ namespace SisFarma.view
                 
                 pController.adicionarProduto(
                     new Produto
-                            (current.recuperarId(2) + 1, descricaoTextBox.Text, 
+                            (current.recuperarId(2) + 1,nomeTextBox.Text, descricaoTextBox.Text, 
                                 Convert.ToDouble(valorTextBox.Text), ""));
                 current.atualizarId(2);
                 MessageBox.Show("Produto cadastrado com sucesso!");
