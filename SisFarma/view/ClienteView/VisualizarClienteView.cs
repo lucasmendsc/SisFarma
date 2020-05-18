@@ -1,5 +1,7 @@
 ﻿using SisFarma.controller.controllers;
+using SisFarma.controller.controllers.postgresql;
 using SisFarma.model.classes;
+using SisFarma.model.DAO.PostgresqlDAO;
 using System;
 using System.Data;
 using System.Drawing;
@@ -19,36 +21,16 @@ namespace SisFarma.view.ClienteView
             clienteController = new ClienteController();
             current = new CurrentIdController();
             this.dt = new DataTable();
+            ClienteDAOPost c = new ClienteDAOPost();
+            this.dt.Load(c.recuperarTodos());
             InitializeComponent();
             this.inicializarDataTable();
         }
 
         private void inicializarDataTable()
         {         
-            dt.Columns.Add("Nome");
-            dt.Columns.Add("Telefone");
-            dt.Columns.Add("Cidade");
-            dt.Columns.Add("Logradouro");
-            dt.Columns.Add("Id");
             dataGridView1.DataSource = dt;
-
             dataGridView1.Columns["Id"].Visible = false;
-            this.inicializarRows();
-        }
-
-        private void inicializarRows()
-        {
-            foreach (Cliente c in clienteController.recuperarTodos())
-            {
-                DataRow row = dt.NewRow();
-                row["Nome"] = c.Nome;
-                row["Telefone"] = c.Telefone;
-                row["Cidade"] = c.Cidade;
-                row["Logradouro"] = c.Logradouro;
-                row["Id"] = c.Id;
-
-                dt.Rows.Add(row);
-            }
         }
 
         private void recuperarClienteButton_Click(object sender, EventArgs e)
@@ -84,7 +66,7 @@ namespace SisFarma.view.ClienteView
 
         private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("" + retornarId());
             new MostrarClienteView(clienteController.recuperarCliente(this.retornarId())).Show();
 
         }

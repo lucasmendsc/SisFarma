@@ -1,4 +1,5 @@
 ﻿using Npgsql;
+using SisFarma.model.classes;
 using System;
 using System.Windows.Forms;
 
@@ -20,19 +21,15 @@ namespace SisFarma.model.DAO.PostgresqlDAO
         }
 
 
-        public void inserir(DateTime dataNasc, string nome, string cpf, string rg,
-                    string sexo, string telefone, string cep, string cidade, string logradouro)
+        public void inserir(Cliente cliente)
         {
             try
             {
                 con.Open();
                 cmd = new NpgsqlCommand
-                        (@"select * from cli_insert('" + dataNasc + "','" + nome + "','" + cpf + "','" +
-                            rg + "','" + sexo + "','" + telefone + "','" + cep + "','" + cidade + "','" + logradouro + "')", con);
-
-                int result = (int)cmd.ExecuteScalar();
-
-                MessageBox.Show("DSA");
+                        (@"select * from cli_insert('" + cliente.DataNasc + "','" + cliente.Nome + "','" + 
+                            cliente.CPF + "','" + cliente.Rg + "','" + cliente.Sexo + "','" + cliente.Telefone + 
+                                "','" + cliente.CEP + "','" + cliente.Cidade + "','" + cliente.Logradouro + "')", con);
             }
             catch (Exception e)
             {
@@ -43,6 +40,15 @@ namespace SisFarma.model.DAO.PostgresqlDAO
                 con.Close();
             }
             
+        }
+
+        public NpgsqlDataReader recuperarTodos()
+        {
+
+                con.Open();
+                cmd = new NpgsqlCommand
+                        (@"select * from cli_select()", con);
+                return cmd.ExecuteReader();
         }
         
     }

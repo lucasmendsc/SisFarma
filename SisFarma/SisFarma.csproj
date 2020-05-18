@@ -91,11 +91,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controller\controllers\ClienteController.cs" />
-    <Compile Include="controller\controllers\CurrentIdController.cs" />
-    <Compile Include="controller\controllers\PedidoController.cs" />
-    <Compile Include="controller\controllers\ProdutoController.cs" />
-    <Compile Include="controller\controllers\UsuarioController.cs" />
+    <Compile Include="controller\controllers\firebase\ClienteController.cs" />
+    <Compile Include="controller\controllers\firebase\CurrentIdController.cs" />
+    <Compile Include="controller\controllers\firebase\PedidoController.cs" />
+    <Compile Include="controller\controllers\postgresql\ClienteControllerPost.cs" />
+    <Compile Include="controller\controllers\firebase\ProdutoController.cs" />
+    <Compile Include="controller\controllers\firebase\UsuarioController.cs" />
     <Compile Include="model\classes\CurrentId.cs" />
     <Compile Include="model\DAO\FirebaseDAO\ClienteDAO.cs" />
     <Compile Include="model\DAO\FirebaseDAO\CurrentIdDAO.cs" />
@@ -269,5 +270,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
