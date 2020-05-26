@@ -4,7 +4,6 @@ using SisFarma.model.classes;
 using SisFarma.model.DAO.PostgresqlDAO;
 using System;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace SisFarma.view.ClienteView
@@ -12,17 +11,19 @@ namespace SisFarma.view.ClienteView
     public partial class VisualizarClienteView : Form
     {
         private ClienteController clienteController;
+        private ClienteControllerPost clienteControllerPostgresql;
         private CurrentIdController current;
         private DataTable dt;
+        private ClienteDAOPost clienteDAOPost;
         private int rowSelected;
 
         public VisualizarClienteView()
         {
             clienteController = new ClienteController();
+            this.clienteControllerPostgresql = new ClienteControllerPost();
             current = new CurrentIdController();
             this.dt = new DataTable();
-            ClienteDAOPost c = new ClienteDAOPost();
-            this.dt.Load(c.recuperarTodos());
+            clienteDAOPost = new ClienteDAOPost();
             InitializeComponent();
             this.inicializarDataTable();
         }
@@ -30,14 +31,37 @@ namespace SisFarma.view.ClienteView
         private void inicializarDataTable()
         {         
             dataGridView1.DataSource = dt;
+            dt.Columns.Add("Nome");
+            dt.Columns.Add("Data de Nascimento");
+            dt.Columns.Add("Telefone");
+            dt.Columns.Add("Cidade");
+            dt.Columns.Add("Logradouro");
+            dt.Columns.Add("Id");
             dataGridView1.Columns["Id"].Visible = false;
+            this.inicializarRows();
+        }
+
+        private void inicializarRows()
+        {
+            foreach (Cliente cli in clienteDAOPost.recuperarTodos())
+            {
+                DataRow row = dt.NewRow();
+                row["Nome"] = cli.Nome;
+                row["Data de Nascimento"] = cli.DataNasc;
+                row["Telefone"] = cli.Telefone;
+                row["Cidade"] = cli.Cidade;
+                row["Logradouro"] = cli.Logradouro;
+                row["Id"] = cli.Id;
+
+                dt.Rows.Add(row);
+            }
         }
 
         private void recuperarClienteButton_Click(object sender, EventArgs e)
         {
             try
             {
-                Cliente c = clienteController.recuperarPorNome
+                Cliente c = clienteControllerPostgresql.recuperarPorNome
                                 (recuperarClienteTextBox.Text);
                                         
                 MessageBox.Show(c.Nome);
@@ -67,14 +91,14 @@ namespace SisFarma.view.ClienteView
         private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("" + retornarId());
-            new MostrarClienteView(clienteController.recuperarCliente(this.retornarId())).Show();
+            new MostrarClienteView(clienteControllerPostgresql.recuperarPorId(this.retornarId())).Show();
 
         }
 
         private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AlterarClienteView
-                    (clienteController.recuperarCliente
+                    (clienteControllerPostgresql.recuperarPorId
                         (this.retornarId())).Show();
         }
 
@@ -82,11 +106,7 @@ namespace SisFarma.view.ClienteView
         {
             try
             {
-                clienteController.deletarCliente
-                    (clienteController.recuperarCliente
-                        (this.retornarId()));
-
-                current.atualizarIdsDeletados(1);
+                clienteControllerPostgresql.deletar(this.retornarId());
                 MessageBox.Show("Cliente deletado com sucesso!");
 
             }

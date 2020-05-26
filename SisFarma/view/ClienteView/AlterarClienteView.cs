@@ -1,4 +1,5 @@
 ﻿using SisFarma.controller.controllers;
+using SisFarma.controller.controllers.postgresql;
 using SisFarma.model.classes;
 using System;
 using System.Windows.Forms;
@@ -8,10 +9,12 @@ namespace SisFarma.view
     public partial class AlterarClienteView : Form
     {
         private ClienteController clienteController;
+        private ClienteControllerPost clienteControllerPost;
         private Cliente cliente;
         public AlterarClienteView(Cliente cliente)
         {
             this.clienteController = new ClienteController();
+            this.clienteControllerPost = new ClienteControllerPost();
             this.cliente = cliente;
             InitializeComponent();
             this.inicializarCampos();
@@ -43,7 +46,7 @@ namespace SisFarma.view
                 cliente.Cidade = cidadeTextBox.Text;
                 cliente.Logradouro = logradouroTextBox.Text;
 
-                clienteController.alterarCliente(cliente);
+                clienteControllerPost.alterar(cliente);
                 MessageBox.Show("Cliente alterado com sucesso!");
             }
             catch (Exception)
