@@ -1,4 +1,5 @@
 ﻿using SisFarma.controller.controllers;
+using SisFarma.controller.controllers.postgresql;
 using SisFarma.model.classes;
 using System;
 using System.Windows.Forms;
@@ -9,10 +10,12 @@ namespace SisFarma.view
     {
         private CurrentIdController current;
         private ProdutoController pController;
+        private ProdutoControllerPost produtoControllerPost;
         public AdicionarProdutoView()
         {
             this.current = new CurrentIdController();
             this.pController = new ProdutoController();
+            this.produtoControllerPost = new ProdutoControllerPost();
             InitializeComponent();
         }
 
@@ -21,11 +24,11 @@ namespace SisFarma.view
             try
             {
                 
-                pController.adicionarProduto(
+                produtoControllerPost.inserir(
                     new Produto
-                            (current.recuperarId(2) + 1,nomeTextBox.Text, descricaoTextBox.Text, 
+                            (3,nomeTextBox.Text, descricaoTextBox.Text, 
                                 Convert.ToDouble(valorTextBox.Text), ""));
-                current.atualizarId(2);
+                
                 MessageBox.Show("Produto cadastrado com sucesso!");
             }
             catch (Exception)

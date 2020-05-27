@@ -1,4 +1,5 @@
 ﻿using SisFarma.controller.controllers;
+using SisFarma.controller.controllers.postgresql;
 using SisFarma.model.classes;
 using System;
 using System.Windows.Forms;
@@ -8,10 +9,12 @@ namespace SisFarma.view
     public partial class AlterarProdutoView : Form
     {
         private ProdutoController pController;
+        private ProdutoControllerPost produtoControllerPost;
         private Produto produto;
         public AlterarProdutoView(Produto produto)
         {
             this.pController = new ProdutoController();
+            this.produtoControllerPost = new ProdutoControllerPost();
             this.produto = produto;
             InitializeComponent();
             this.inicializarCampos();
@@ -29,12 +32,12 @@ namespace SisFarma.view
             {
                 produto.Descricao = descricaoTextBox.Text;
                 produto.Valor = Convert.ToDouble(precoTextBox.Text);
-                pController.alterarProduto(produto);
+                produtoControllerPost.alterar(produto);
                 MessageBox.Show("Produto alterado com sucesso!");
             }
             catch (Exception)
             {
-                MessageBox.Show("Algo inesperado aconteceu");
+                MessageBox.Show("Ocorreu um erro ao alterar um produto");
             }
            
         }

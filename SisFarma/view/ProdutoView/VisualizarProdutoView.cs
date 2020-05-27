@@ -1,8 +1,8 @@
 ﻿using SisFarma.controller.controllers;
+using SisFarma.controller.controllers.postgresql;
 using SisFarma.model.classes;
 using System;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace SisFarma.view
@@ -10,12 +10,14 @@ namespace SisFarma.view
     public partial class ProdutoView : Form
     {
         private ProdutoController pController;
+        private ProdutoControllerPost produtoControllerPost;
         private CurrentIdController current;
         private DataTable dt;
         private int rowSelected;
         public ProdutoView()
         {
             InitializeComponent();
+            this.produtoControllerPost = new ProdutoControllerPost();
             pController = new ProdutoController();
             current = new CurrentIdController();
             this.dt = new DataTable();
@@ -34,7 +36,7 @@ namespace SisFarma.view
 
         private void inicializarRows()
         {
-            foreach (Produto p in pController.recuperarTodos())
+            foreach (Produto p in produtoControllerPost.recuperarTodos())
             {
                 DataRow row = dt.NewRow();
                 row["Descrição"] = p.Descricao;
@@ -49,7 +51,7 @@ namespace SisFarma.view
         {
             try
             {
-                Produto produto = pController.recuperarPorDescricao
+                Produto produto = produtoControllerPost.recuperarPorNome
                                         (recuperarTextBox.Text);
                 MessageBox.Show(produto.Descricao);
 
@@ -80,8 +82,7 @@ namespace SisFarma.view
             try
             {
                 pController.deletarProduto
-                    (pController.recuperarPorId(this.retornarId()));
-                current.atualizarIdsDeletados(2);
+                    (produtoControllerPost.recuperarPorId(this.retornarId()));
                 MessageBox.Show("Produto deletado com sucesso!");
 
             }
@@ -94,7 +95,7 @@ namespace SisFarma.view
         private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new MostrarProdutoView
-                    (pController.recuperarPorId
+                    (produtoControllerPost.recuperarPorId
                             (this.retornarId())).Show();
         }
 
@@ -102,7 +103,7 @@ namespace SisFarma.view
         {
             
             new AlterarProdutoView
-                    (pController.recuperarPorId
+                    (produtoControllerPost.recuperarPorId
                             (this.retornarId())).Show();
         }
 
