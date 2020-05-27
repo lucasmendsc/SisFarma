@@ -1,4 +1,5 @@
 ﻿using SisFarma.controller.controllers;
+using SisFarma.controller.controllers.postgresql;
 using SisFarma.model.classes;
 using System;
 using System.Windows.Forms;
@@ -9,10 +10,12 @@ namespace SisFarma.view.UsuarioView
     {
         private CurrentIdController current;
         private UsuarioController usuarioController;
+        private UsuarioControllerPost usuarioControllerPost;
         public AdicionarUsuarioView()
         {
             this.current = new CurrentIdController();
             this.usuarioController = new UsuarioController();
+            this.usuarioControllerPost = new UsuarioControllerPost();
             InitializeComponent();
         }
 
@@ -26,10 +29,9 @@ namespace SisFarma.view.UsuarioView
             {
                 try
                 {
-                    usuarioController.adicionarUsuario
-                        (new Usuario(current.recuperarId(5) + 1,nomeTextBox.Text,
+                    usuarioControllerPost.inserir
+                        (new Usuario(usuarioControllerPost.recuperarTodos().Count + 1,nomeTextBox.Text,
                         loginTextBox.Text,senhaTextBox.Text));
-                    current.atualizarId(5);
                     MessageBox.Show("Usuário cadastrado com sucesso!");
                 }
                 catch (Exception)

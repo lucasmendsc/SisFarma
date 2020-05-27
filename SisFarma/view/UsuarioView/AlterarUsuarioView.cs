@@ -1,4 +1,5 @@
 ﻿using SisFarma.controller.controllers;
+using SisFarma.controller.controllers.postgresql;
 using SisFarma.model.classes;
 using System;
 using System.Windows.Forms;
@@ -8,11 +9,13 @@ namespace SisFarma.view
     public partial class AlterarUsuarioView : Form
     {
         private UsuarioController usuarioController;
+        private UsuarioControllerPost usuarioControllerPost;
         private Usuario usuario;
         public AlterarUsuarioView(Usuario usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
+            this.usuarioControllerPost = new UsuarioControllerPost();
             this.usuarioController = new UsuarioController();
             this.inicializarCampos();
         }
@@ -37,12 +40,12 @@ namespace SisFarma.view
                     usuario.Nome = nomeTextBox.Text;
                     usuario.Login = loginTextBox.Text;
                     usuario.Senha = senhaTextBox.Text;
-                    usuarioController.alterarUsuario(usuario);
+                    usuarioControllerPost.alterar(usuario);
                     MessageBox.Show("Usuario alterado com sucesso!");
                 }
-                catch (Exception)
+                catch (Exception exc)
                 {
-                    MessageBox.Show("Ocorreu um erro ao alterar o usuario.");
+                    MessageBox.Show(exc.Message);
                 }
             }
         }

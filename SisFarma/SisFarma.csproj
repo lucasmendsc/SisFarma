@@ -98,6 +98,7 @@
     <Compile Include="controller\controllers\firebase\ProdutoController.cs" />
     <Compile Include="controller\controllers\firebase\UsuarioController.cs" />
     <Compile Include="controller\controllers\postgresql\ProdutoControllerPost.cs" />
+    <Compile Include="controller\controllers\postgresql\UsuarioControllerPost.cs" />
     <Compile Include="model\classes\CurrentId.cs" />
     <Compile Include="model\DAO\FirebaseDAO\ClienteDAO.cs" />
     <Compile Include="model\DAO\FirebaseDAO\CurrentIdDAO.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="model\DAO\PostgresqlDAO\ClienteDAOPost.cs" />
     <Compile Include="model\DAO\PostgresqlDAO\PostgreSqlCon.cs" />
     <Compile Include="model\DAO\PostgresqlDAO\ProdutoDAOPost.cs" />
+    <Compile Include="model\DAO\PostgresqlDAO\UsuarioDAOPost.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="view\UsuarioView\AlterarUsuarioView.cs">
       <SubType>Form</SubType>

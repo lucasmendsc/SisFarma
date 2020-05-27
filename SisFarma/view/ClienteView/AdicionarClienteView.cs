@@ -26,7 +26,7 @@ namespace SisFarma.view.ClienteView
                 
                 clienteControllerPost.inserir
                     (new Cliente
-                        (7,nomeTextBox.Text,cpfTextBox.Text,
+                        (clienteControllerPost.recuperarTodos().Count + 1,nomeTextBox.Text,cpfTextBox.Text,
                         rgTextBox.Text,dateTimePicker1.Value,sexoTextBox.Text,
                         telefoneTextBox.Text,cepTextBox.Text,cidadeTextBox.Text,
                         logradouroTextBox.Text,Convert.ToInt32(numeroTextBox.Text)));

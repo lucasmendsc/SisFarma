@@ -26,7 +26,7 @@ namespace SisFarma.view
                 
                 produtoControllerPost.inserir(
                     new Produto
-                            (3,nomeTextBox.Text, descricaoTextBox.Text, 
+                            (produtoControllerPost.recuperarTodos().Count + 1, nomeTextBox.Text, descricaoTextBox.Text, 
                                 Convert.ToDouble(valorTextBox.Text), ""));
                 
                 MessageBox.Show("Produto cadastrado com sucesso!");

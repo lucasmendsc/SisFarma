@@ -1,4 +1,5 @@
 ﻿using SisFarma.controller.controllers;
+using SisFarma.controller.controllers.postgresql;
 using SisFarma.model.classes;
 using System;
 using System.Data;
@@ -10,12 +11,14 @@ namespace SisFarma.view.UsuarioView
     public partial class VisualizarUsuarioView : Form
     {
         private UsuarioController usuarioController;
+        private UsuarioControllerPost usuarioControllerPost;
         private CurrentIdController current;
         private DataTable dt;
         private int rowSelected;
         public VisualizarUsuarioView()
         {
             usuarioController = new UsuarioController();
+            this.usuarioControllerPost = new UsuarioControllerPost();
             current = new CurrentIdController();
             this.dt = new DataTable();
             InitializeComponent();
@@ -35,7 +38,7 @@ namespace SisFarma.view.UsuarioView
 
         private void inicializarRows()
         {
-            foreach (Usuario u in usuarioController.recuperarTodos())
+            foreach (Usuario u in usuarioControllerPost.recuperarTodos())
             {
                 DataRow row = dt.NewRow();
                 row["Nome"] = u.Nome;
@@ -51,7 +54,7 @@ namespace SisFarma.view.UsuarioView
             try
             {
                 Usuario usuario =
-                    usuarioController.recuperarUsuarioPorNome(recuperarTextBox.Text);
+                    usuarioControllerPost.recuperarPorNome(recuperarTextBox.Text);
 
             }
             catch (Exception)
@@ -79,14 +82,14 @@ namespace SisFarma.view.UsuarioView
         private void visualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new MostrarUsuarioView
-                    (usuarioController.recuperarUsuarioId
+                    (usuarioControllerPost.recuperarPorId
                         (this.retornarId())).Show();
         }
 
         private void alterarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AlterarUsuarioView
-                    (usuarioController.recuperarUsuarioId
+                    (usuarioControllerPost.recuperarPorId
                         (this.retornarId())).Show();
         }
 
@@ -94,9 +97,8 @@ namespace SisFarma.view.UsuarioView
         {
             try
             {
-                usuarioController.deletarUsuario
-                      (usuarioController.recuperarUsuarioId(this.retornarId()));
-                current.atualizarIdsDeletados(5);
+                usuarioControllerPost.deletar(retornarId());
+
                 MessageBox.Show("Usuario deletado com sucesso!");
 
             }
